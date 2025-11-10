@@ -6,7 +6,7 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage[hidelinks]{hyperref}
-\usepackage{parskip} % nicer spacing, no indents
+% \usepackage{parskip} % nicer spacing, no indents
 
 % Flexible column type for TabularX
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
@@ -61,10 +61,10 @@ In the following table we detail some of the characteristics of the datasets we 
     \toprule
         Dataset & Samples & Feature Columns & Classes & Target \\
         \midrule
-        Kaggle Breast Cancer & $285$ & $30$ & $2$ & \textbf{class} \\
-        Kaggle Loan & $X$ & $X$ & $X$ & \textbf{X} \\
-        Wine Reviews & $84.123$ & $5$ & $29$ & \textbf{variety} \\
-        AirBnB & $18.316$ & $99$ & $2$ & \textbf{price\_label} \\
+        Kaggle Breast Cancer & $285$ & $30$ & $2$ & \texttt{class} \\
+        Kaggle Loan & $10.000$ & $90$ & $7$ & \texttt{grade} \\
+        Wine Reviews & $84.123$ & $5$ & $29$ & \texttt{variety} \\
+        AirBnB & $18.316$ & $99$ & $2$ & \texttt{price\_label} \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -84,10 +84,35 @@ For each of the datasets, we specify the processing we have applied throughout t
 
 \subsubsection{Kaggle Loans Dataset}
 \begin{itemize}
-\item Missing Values: 
-\item Encoding: 
-\item Scaling: 
-\item Outliers: 
+\item \textbf{Missing Values:} There are no missing or NULL values in this dataset. There was a \texttt{"NONE"} value in the categorical column \textbf{home\_ownership} that was not present in the training set. This was resolved by changing the value to \texttt{"OTHER"}.
+\item \textbf{Encoding:} There were 14 categorical columns that had to be encoded as numerical values. We made an effort to capture meaningful relationships and not just use dummy variables for everything. This were the decisions we made:
+
+\begin{table}[h]
+\centering
+\label{tab:Data_summary}
+\begin{tabular}{lrr}
+    \toprule
+        Feature & Values & Encoding \\
+        \midrule
+        \textbf{term} & \texttt{36} or \texttt{60} & Extracted decimal values \\
+        \textbf{emp\_length} & From \texttt{<1} to \texttt{10+} & Extracted decimal values \\
+        \textbf{home\_ownership} & Values like \texttt{RENT} & One-hot encoding \\
+        \textbf{verification\_status} & Different verification levels & Numerical \texttt{0}, \texttt{1}, or \texttt{2} \\
+        \textbf{loan\_status} & Different loan payment levels & Numerical from \texttt{0} to \texttt{5} \\
+        \textbf{pymnt\_plan} & \texttt{y} or \texttt{n} values &  Extracted binary values \\
+        \textbf{purpose} & Values like \texttt{CAR} & One-hot encoding \\
+        \textbf{addr\_state} & Values like \texttt{CA} or \texttt{NY} & Frequency and label encoding \\
+        \textbf{initial\_list\_status} & Values \texttt{w} and \texttt{f} & Extracted binary values \\
+        \textbf{application\_type} & Values \texttt{Individual} or \texttt{Joint} & Numerical \texttt{1} or \texttt{2} \\
+        \textbf{hardship\_flag} &  Values \texttt{Y} or \texttt{N} & Extracted binary values \\
+        \textbf{disbursement\_method} & Values \texttt{Cash} or \texttt{DirectPay} & Numerical \texttt{-1} or \texttt{1} \\
+        \textbf{debt\_settlement\_flag} & Values \texttt{Y} ro \texttt{N} & Extracted binary values \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\item \textbf{Scaling:} Similar to the process used with the Breast Cancer Dataset, scaling was applied independently within each cross-validation fold. This results in better estimates for model performance with no data leakage during training.
+\item \textbf{Outliers:} We first checked the numerical columns to separate features that followed a normal distribution, the ones that showed considerable skewedness, and the multi-modal ones. Depending on this results, we used \textit{Inter-Quartile Range} for skewed or \textit{Isolation Forest} for multi-modal distributions to identify the outliers in a meaningful way. Finally, we performed a visual check of the distribution of the labels over the whole data next to the distribution of the labels for the outliers. Again, we chose not to remove any values.
 \end{itemize}
 
 \vspace{0.5cm}
@@ -107,7 +132,7 @@ For each of the datasets, we specify the processing we have applied throughout t
 \item \textbf{Missing Values:} The dataset exhibited substantial missingness across multiple columns. Review-related features (\textbf{review\_scores}, \textbf{reviews\_per\_month}) showed approximately $25\%$ missing values, while optional fields such as \textbf{security\_deposit} ($72\%$) and \textbf{cleaning\_fee} ($25\%$) had considerably higher rates. To preserve information about missingness patterns, we created binary indicator features (e.g., \textbf{has\_security\_deposit}, \textbf{no\_reviews\_yet}) before imputation. Numeric features were filled with either 0 (for \textbf{fees}/\textbf{deposits}) or median values (for \textbf{review\_scores} and \textbf{property} characteristics), while binary features were imputed using mode values.
 \item \textbf{Encoding:}: This dataset required extensive categorical handling due to its heterogeneous structure. Boolean variables: 27 binary host verification fields (e.g., \textbf{host\_verifications\_email}, \textbf{host\_verifications\_phone}) were converted from string representations ('t'/'f') to numeric (0/1). Low-cardinality categoricals: One-hot encoding was applied to \textbf{room\_type}, \textbf{bed\_type}, \textbf{cancellation\_policy}, and \textbf{state} (after normalization to consolidate spelling variations of Victoria, NSW, and Queensland). High-cardinality features: The \textbf{property\_type} column (143 unique values) was encoded using frequency encoding to avoid excessive dimensionality explosion. Target encoding: The zipcode feature was target-encoded using the numeric price label with smoothing parameters to prevent overfitting. List-type features: Amenities (369 unique values) and host verifications were parsed from string representations and multi-label binarized, creating 369 and 24 binary columns respectively. Text features: Eleven text columns (\textbf{name}, \textbf{summary}, \textbf{description}, etc.) were combined and vectorized using sentence-transformers (all-MiniLM-L6-v2 model) to generate 384-dimensional embeddings per listing.
 \item \textbf{Scaling:}: StandardScaler was applied exclusively to numeric features within each cross-validation fold. Text embeddings, being pre-normalized by the transformer model, were not scaled. To prevent data leakage, the scaler was fitted only on training splits and then applied to both training and validation data.
-\item \textbf{Outliers:}: Outlier analysis revealed extreme values in several numeric columns, particularly in pricing-related features and review scores. However, these were retained as they represent legitimate market segments (e.g., luxury properties with ultra-high prices, or problematic listings with very low review scores). Removing such cases would have artificially constrained the model's ability to learn the full spectrum of price categories, especially the "ultra luxury" class.
+\item \textbf{Outliers:}: Outlier analysis revealed extreme values in several numeric columns, particularly in pricing-related features and review scores. However, these were retained as they represent legitimate market segments (e.g., luxury properties with ultra-high prices, or problematic listings with very low review scores). Removing such cases would have artificially constrained the model's ability to learn the full spectrum of price categories, especially the "ultra luxury" class.
 \end{itemize}
 
 \vspace{0.5cm}
@@ -156,20 +181,21 @@ Below is a table detailing the mean performance for each model using the macroav
         Breast Cancer & Precision & $0.958^{*_1}$ & $0.971^{*_1}$ & $0.952^{*_1}$ \\
             & Recall & $0.962^{*_1}$ & $0.970^{*_1}$ & $0.955^{*_1}$ \\
             & F1 & $0.960^{*_1}$ & $0.971^{*_1}$ & $0.953^{*_1}$ \\
-        Loans & Precision & $X$ & $X$ & $X$ \\
-            & Recall & $X$ & $X$ & $X$ \\
-            & F1 & $X$ & $X$ & $X$ \\
+        Loans & Precision & $0.877^{*_3}$ & $0.629^{*_3}$ & $0.902^{*_3}$ \\
+            & Recall & $0.818^{*_3}$ & $0.602^{*_3}$ & $0.889^{*_3}$ \\
+            & F1 & $0.843^{*_3}$ & $0.606^{*_3}$ & $0.891^{*_3}$ \\
         Wine Reviews & Precision & $0.690$ & $N/A^{*_2}$ & $0.793$ \\
             & Recall & $0.700$ & $N/A^{*_2}$ & $0.756$ \\
             & F1 & $0.694$ & $N/A^{*_2}$ & $0.770$ \\
-        AirBnB & Precision & $X$ & $X$ & $X$ \\
-            & Recall & $X$ & $X$ & $X$ \\
+        AirBnB & Precision & $0.311$ & $0.321$ & $0.363$ \\
+            & Recall & $0.319$ & $0.325$ & $0.368$ \\
             & F1 & $0.308$ & $0.316$ & $0.358$ \\
         \bottomrule
     \end{tabular}
 \end{table}
 $*^1$ As measured using the best cross-validation metrics, given that Kaggle holdout dataset is unlabeled.
 $*^2$ The model takes too long to train for 29 classes.
+$*^3$ Measured from 30\% of the labeled data separated as test set.
 
 \begin{figure}[h!]
     \centering
@@ -192,18 +218,21 @@ We can see that due to fact that the Wine Reviews dataset has so many classes, t
         Dataset & Rows & Logistic Regression & Support Vector Machine & XGBoost \\
         \midrule
         Breast Cancer & $285$ & $1s$ & $1s$ & $1s$ \\
-        Loans & $X$ & $Xs$ & $Xs$ & $Xs$ \\
+        Loans & $10.000$ & $122s^{*_1}$ & $99s^{*_1}$ & $61s^{*_1}$ \\
         Wine Reviews & $84.123$ & $125s$ & $>1.800s^{*_2}$ & $420s$ \\
         AirBnB & $18.316$ & $9s$ & $71s$ & $44s$ \\
         \bottomrule
     \end{tabular}
 \end{table}
+$*^1$ Total time over 8 cross-validation folds on Kaggle platform.
 $*^2$ The model takes too long to train for 29 classes.
 
 \section{Conclusions}
 \label{sec:Conclusions}
 \subsection{General Conclusions}
 As the datasets grow more and more complex, we can see that XGBoost outperforms the more simpler models, however, for the very small and simple dataset that is the Cancer dataset, Logistic Regression holds up quite well, and in fact, gave us the best results.
+
+\vspace{0.5cm}
 
 \subsection{Breast Cancer}
 For this dataset, we found that there was a slight imbalance in the classes, though not enough to deserve a special handling. When training a baseline model, we can notice we already have a decent performance, and all other techniques applied afterwards gave only marginal benefits, which nonetheless might be significant when applied to the domain of Cancer detection.
@@ -212,7 +241,9 @@ Furthermore, as the amount of rows was so small, we found that there is a higher
 \vspace{0.5cm}
 
 \subsection{Loans}
-TO DO: Manuel
+With the loans dataset, the several classes presented enough imbalance that the Support Vector Machine was initially having difficulties to complete. We used the \texttt{class\_weight} parameter to compensate the imbalance. This dataset offered us the opportunity to engineer several features. We recognize that the relationships we decided to create for the numerical representation of some columns might influence the model in a negative way. This can be seen because a simple one-hot encoding for all features results in a better performance across all 3 methods. In the end, we decided to commit to our engineered features (since we had achieved a high rank on the Cancer competition already).
+
+For the cross-validation we tried to eliminate any data leaking but we identified one way we leaked data during our process: the frequency and label encoding used for the address state feature. Overall, the process was very illuminating. Feature engineering can be a time-consuming endeavour that can result in data-leakage without providing better results than the use of dummy variables.
 
 \vspace{0.5cm}
 
@@ -236,6 +267,6 @@ Five-fold cross-validation confirmed these findings with remarkable stability: X
 
 Computational efficiency varied dramatically: Logistic Regression trained in 9 seconds, XGBoost in 44 seconds, while SVM exceeded 30 minutes with full features. For production deployment, XGBoost offers the best accuracy-speed balance.
 
-The key lesson: more features don't guarantee better performance. Adding 384 text dimensions hurt XGBoost's accuracy, emphasizing careful feature evaluation over indiscriminate inclusion. Tree-based methods' success confirms real-world pricing involves complex non-linear interactions, while holdout-CV consistency validates our experimental methodology.
+The key lesson: more features don't guarantee better performance. Adding 384 text dimensions hurt XGBoost's accuracy, emphasizing careful feature evaluation over indiscriminate inclusion. Tree-based methods' success confirms real-world pricing involves complex non-linear interactions, while holdout-CV consistency validates our experimental methodology.
 
 \end{document}
