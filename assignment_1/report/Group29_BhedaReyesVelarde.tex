@@ -159,8 +159,8 @@ Below is a table detailing the mean performance for each model using the macroav
         Loans & Precision & $X$ & $X$ & $X$ \\
             & Recall & $X$ & $X$ & $X$ \\
             & F1 & $X$ & $X$ & $X$ \\
-        Wine Reviews & Precision & $0.690$ & $N/A^{*_2}$ & $0.793$ \\
-            & Recall & $0.700$ & $N/A^{*_2}$ & $0.756$ \\
+        Wine Reviews & Precision & $0.690$ & $N/A^{*_2}$ & $0.790$ \\
+            & Recall & $0.700$ & $N/A^{*_2}$ & $0.758$ \\
             & F1 & $0.694$ & $N/A^{*_2}$ & $0.770$ \\
         AirBnB & Precision & $X$ & $X$ & $X$ \\
             & Recall & $X$ & $X$ & $X$ \\
@@ -222,6 +222,8 @@ For this dataset, we observed that the distribution of the wine varieties is hig
 One possible strategy to mitigate this issue would be to redefine the labeling scheme in order to simplify the prediction task. Instead of forcing the model to distinguish among all 29 categories, we could introduce a more aggregated representation. For instance, wine varieties that appear fewer than a certain number of times could be grouped into a single “\textit{Other}” category. This would reduce noise and give the model a better chance of learning discriminative patterns from the most relevant classes without being overwhelmed by rare categories. Another potential approach would be to relabel each wine according to its broader color type—for example, “Red,” “White,” or “Other.” This alternative formulation would convert the task into a three-class classification problem, likely resulting in more stable and interpretable results while still retaining an interesting level of complexity.
 
 We also found that feature extraction played a crucial role in improving model performance. When the model relied solely on the structured numerical and categorical features, its predictive ability remained limited, suggesting that much of the distinguishing information lies within the free-text review descriptions. After incorporating TF–IDF encoding on the review text, we observed a clear and consistent improvement in classification accuracy. This demonstrates that the textual data provides valuable contextual cues about the flavor profile, aroma, and overall sensory experience of each wine, which in turn helps guide the model toward identifying the correct variety. In practical terms, this result highlights how the combination of structured and unstructured data can significantly enhance predictive performance and provide a richer understanding of the domain.
+
+When considering a few sets of different parameters, we have seen that for both the Logistic Regression as well as the XGB Classifier model performed best with the default parameters.
 
 \vspace{0.5cm}
 
