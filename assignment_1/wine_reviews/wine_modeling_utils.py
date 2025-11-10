@@ -152,7 +152,6 @@ def prepare_and_run_cv_baseline(df: pd.DataFrame,
             if svm_classifier_params:
                 for model_params in svm_classifier_params:
                     svmc = SVC(random_state=seed, 
-                                   kernel="linear", 
                                    cache_size=1000, 
                                    verbose=True, 
                                    **model_params
@@ -344,7 +343,6 @@ def prepare_and_run_cv_feat_eng(df: pd.DataFrame,
             if svm_classifier_params:
                 for model_params in svm_classifier_params:
                     svmc = SVC(random_state=seed, 
-                                   #kernel="linear", 
                                    cache_size=1000, 
                                    verbose=True, 
                                    **model_params
