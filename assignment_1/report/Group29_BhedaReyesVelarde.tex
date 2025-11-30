@@ -18,7 +18,7 @@
 \begin{document}
 \maketitle
 
-\vspace{0.5cm}
+\vspace{1.0cm}
 
 \section{Introduction and Objectives}
 \label{sec:intro}
@@ -38,15 +38,19 @@ Our specific goals were to:
 
 The remainder of this report introduces the datasets and preprocessing methods (Section~\ref{sec:Datasets}), details the classifiers and experimental setup (Section~\ref{sec:Methods}), presents and compares results (Section~\ref{sec:Results}), and concludes with key findings and reflections (Section~\ref{sec:Conclusions}).
 
-\vspace{0.5cm}
+\vspace{1.0cm}
 
 \section{Datasets}
 \label{sec:Datasets}
 \subsection{Overview}
 We have chosen our two datasets primarily to ensure a high level of diversity in the type and structure of the data we work with. 
-The first one, the Wine Review dataset(\url{https://www.openml.org/search?type=data&id=46653}), contains only a small number of numerical and categorical columns, but it also includes a free-text description column which contains a review for each wine. This textual component makes the dataset particularly interesting, as it opens the door to various text preprocessing and feature extraction techniques such as tokenization, TF-IDF vectorization, or sentiment analysis. Furthermore, this dataset represents a multiclass classification problem, which allows us to explore models capable of handling multiple categories simultaneously, and to evaluate their performance across several classes rather than a simple binary outcome.
-In contrast, the AirBnB dataset(\url{https://www.openml.org/search?type=data&id=46881}) provides us with a much broader structure. It contains numerous attributes resulting in a high-dimensional binary classification task. This setup allows us to experiment with different feature selection and dimensionality-reduction methods, and to compare how various algorithms handle large and complex input spaces.
-The Breast Cancer(\url{https://www.kaggle.com/competitions/184-702-tu-ml-2025w-breast-cancer/data}) and Loan(\url{https://www.kaggle.com/competitions/184-702-tu-ml-2025-w-loan/data}) datasets, on the other hand, were provided to us as part of the exercise and therefore did not involve an active selection process from our side. Nonetheless, we have performed data profiling, exploration, and cleaning steps to understand their main characteristics. 
+
+The first one, the Wine Review dataset (\href{https://www.openml.org/search?type=data&id=46653}{\textbf{URL OpenML Wine Review Dataset}}), contains only a small number of numerical and categorical columns, but it also includes a free-text description column which contains a review for each wine. This textual component makes the dataset particularly interesting, as it opens the door to various text preprocessing and feature extraction techniques such as tokenization, TF-IDF vectorization, or sentiment analysis. Furthermore, this dataset represents a multiclass classification problem, which allows us to explore models capable of handling multiple categories simultaneously, and to evaluate their performance across several classes rather than a simple binary outcome.
+
+In contrast, the AirBnB dataset (\href{https://www.openml.org/search?type=data&id=46881}{\textbf{URL OpenML AirBnB Dataset}}) provides us with a much broader structure. It contains numerous attributes resulting in a high-dimensional multiclass task. This setup allows us to experiment with different feature selection and dimensionality-reduction methods, and to compare how various algorithms handle large and complex input spaces.
+
+The Breast Cancer (\href{https://www.kaggle.com/competitions/184-702-tu-ml-2025w-breast-cancer/data}{\textbf{URL Kaggle Breast Cancer Dataset}}) and Loan (\href{https://www.kaggle.com/competitions/184-702-tu-ml-2025-w-loan/data}{\textbf{URL Kaggle Loans Dataset}}\url{}) datasets, on the other hand, were provided to us as part of the exercise and therefore did not involve an active selection process from our side. Nonetheless, we have performed data profiling, exploration, and cleaning steps to understand their main characteristics. 
+
 A detailed summary of these datasets is presented in the following section.
 
 \vspace{0.5cm}
@@ -61,10 +65,10 @@ In the following table we detail some of the characteristics of the datasets we 
     \toprule
         Dataset & Samples & Feature Columns & Classes & Target \\
         \midrule
-        Kaggle Breast Cancer & $285$ & $30$ & $2$ & \textbf{class} \\
-        Kaggle Loan & $X$ & $X$ & $X$ & \textbf{X} \\
-        Wine Reviews & $84.123$ & $5$ & $29$ & \textbf{variety} \\
-        AirBnB & $18.316$ & $99$ & $2$ & \textbf{price\_label} \\
+        Kaggle Breast Cancer & $285$ & $30$ & $2$ & \texttt{class} \\
+        Kaggle Loan & $10.000$ & $90$ & $7$ & \texttt{grade} \\
+        Wine Reviews & $84.123$ & $5$ & $29$ & \texttt{variety} \\
+        AirBnB & $18.316$ & $103$ & $10$ & \texttt{price\_label} \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -80,14 +84,46 @@ For each of the datasets, we specify the processing we have applied throughout t
 \item \textbf{Outliers:} Visual inspection of the feature distributions and boxplots revealed the presence of several outliers. However, we chose not to remove them, as these extreme values may correspond to genuine measurements indicative of recurrent cases. Removing them could have led to a loss of valuable signal, particularly for the positive class, which tends to be more difficult to detect.
 \end{itemize}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{"cancer_eda_example.png"}
+    \caption{"Example: Cancer Recurrence EDA"}
+    \label{fig:cancer_recurrence_eda}
+\end{figure}
+
 \vspace{0.5cm}
 
 \subsubsection{Kaggle Loans Dataset}
 \begin{itemize}
-\item Missing Values: 
-\item Encoding: 
-\item Scaling: 
-\item Outliers: 
+\item \textbf{Missing Values:} There are no missing or NULL values in this dataset. There was a \texttt{"NONE"} value in the categorical column \textbf{home\_ownership} that was not present in the training set. This was resolved by changing the value to \texttt{"OTHER"}.
+\item \textbf{Encoding:} There were 13 categorical columns that had to be encoded as numerical values. We made an effort to capture meaningful relationships and not just use dummy variables for everything. This were the decisions we made:
+
+\begin{table}[h]
+\centering
+\label{tab:Data_summary}
+\begin{tabular}{lrr}
+    \toprule
+        Feature & Values & Encoding \\
+        \midrule
+        \textbf{term} & \texttt{36} or \texttt{60} & Extracted decimal values \\
+        \textbf{emp\_length} & From \texttt{<1} to \texttt{10+} & Extracted decimal values \\
+        \textbf{home\_ownership} & Values like \texttt{RENT} & One-hot encoding \\
+        \textbf{verification\_status} & Different verification levels & Numerical \texttt{0}, \texttt{1}, or \texttt{2} \\
+        \textbf{loan\_status} & Different loan payment levels & Numerical from \texttt{0} to \texttt{5} \\
+        \textbf{pymnt\_plan} & \texttt{y} or \texttt{n} values &  Extracted binary values \\
+        \textbf{purpose} & Values like \texttt{CAR} & One-hot encoding \\
+        \textbf{addr\_state} & Values like \texttt{CA} or \texttt{NY} & Frequency and label encoding \\
+        \textbf{initial\_list\_status} & Values \texttt{w} and \texttt{f} & Extracted binary values \\
+        \textbf{application\_type} & Values \texttt{Individual} or \texttt{Joint} & Numerical \texttt{1} or \texttt{2} \\
+        \textbf{hardship\_flag} &  Values \texttt{Y} or \texttt{N} & Extracted binary values \\
+        \textbf{disbursement\_method} & Values \texttt{Cash} or \texttt{DirectPay} & Numerical \texttt{-1} or \texttt{1} \\
+        \textbf{debt\_settlement\_flag} & Values \texttt{Y} ro \texttt{N} & Extracted binary values \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\item \textbf{Scaling:} Similar to the process used with the Breast Cancer Dataset, scaling was applied independently within each cross-validation fold. This results in better estimates for model performance with no data leakage during training.
+\item \textbf{Outliers:} We first checked the numerical columns to separate features that followed a normal distribution, the ones that showed considerable skewedness, and the multi-modal ones. Depending on this results, we used \textit{Inter-Quartile Range} for skewed or \textit{Isolation Forest} for multi-modal distributions to identify the outliers in a meaningful way. Finally, we performed a visual check of the distribution of the labels over the whole data next to the distribution of the labels for the outliers. Again, we chose not to remove any values.
 \end{itemize}
 
 \vspace{0.5cm}
@@ -110,7 +146,7 @@ For each of the datasets, we specify the processing we have applied throughout t
 \item \textbf{Outliers:}: Outlier analysis revealed extreme values in several numeric columns, particularly in pricing-related features and review scores. However, these were retained as they represent legitimate market segments (e.g., luxury properties with ultra-high prices, or problematic listings with very low review scores). Removing such cases would have artificially constrained the model's ability to learn the full spectrum of price categories, especially the "ultra luxury" class.
 \end{itemize}
 
-\vspace{0.5cm}
+\newpage
 
 \section{Methods}
 \label{sec:Methods}
@@ -126,8 +162,12 @@ A margin-based classifier that seeks an optimal separating hyperplane between cl
 \paragraph{Extreme Gradient Boosting (XGBoost).}
 A tree-based ensemble model that builds multiple weak learners sequentially, optimizing a regularized objective function. XGBoost can model complex nonlinear relationships and typically handles feature interactions and missing values well. It is less sensitive to scaling but computationally more expensive, especially on large datasets.
 
+\vspace{0.5cm}
+
 \subsection{Experimental design}
 For the experiments, we have selected a set of seeds which were used to reproduce results for every execution. Each seed gives us a different (but reproducible) split of the data, which is then measured on the validation dataset in order to get a measure of the mean performance of the model over these different data splits.
+
+\vspace{0.5cm}
 
 \subsection{Metrics}
 Given Classification as the problem we are trying to solve, we selected Classification based metrics, in particular:
@@ -138,7 +178,7 @@ Given Classification as the problem we are trying to solve, we selected Classifi
 \end{itemize}
 Our main metric chosen is the F1 score, as this allows us to penalize strongly when either Recall or Precision is high at the expensive of the other metric. That is, for a High Precision and Low Recall, F1 penalizes the final score, and likewise for a High Recall and Low Precision.
 
-\newpage
+\vspace{1.0cm}
 
 \section{Results}
 \label{sec:Results}
@@ -156,20 +196,23 @@ Below is a table detailing the mean performance for each model using the macroav
         Breast Cancer & Precision & $0.958^{*_1}$ & $0.971^{*_1}$ & $0.952^{*_1}$ \\
             & Recall & $0.962^{*_1}$ & $0.970^{*_1}$ & $0.955^{*_1}$ \\
             & F1 & $0.960^{*_1}$ & $0.971^{*_1}$ & $0.953^{*_1}$ \\
-        Loans & Precision & $X$ & $X$ & $X$ \\
-            & Recall & $X$ & $X$ & $X$ \\
-            & F1 & $X$ & $X$ & $X$ \\
-        Wine Reviews & Precision & $0.690$ & $N/A^{*_2}$ & $0.790$ \\
-            & Recall & $0.700$ & $N/A^{*_2}$ & $0.758$ \\
-            & F1 & $0.694$ & $N/A^{*_2}$ & $0.770$ \\
-        AirBnB & Precision & $X$ & $X$ & $X$ \\
-            & Recall & $X$ & $X$ & $X$ \\
+        Loans & Precision & $0.877^{*_3}$ & $0.629^{*_3}$ & $0.902^{*_3}$ \\
+            & Recall & $0.818^{*_3}$ & $0.602^{*_3}$ & $0.889^{*_3}$ \\
+            & F1 & $0.843^{*_3}$ & $0.606^{*_3}$ & $0.891^{*_3}$ \\
+        Wine Reviews & Precision & $0.690$ & N/A$^{*_2}$ & $0.790$ \\
+            & Recall & $0.700$ & N/A$^{*_2}$ & $0.758$ \\
+            & F1 & $0.694$ & N/A$^{*_2}$ & $0.770$ \\
+        AirBnB & Precision & $0.311$ & $0.321$ & $0.363$ \\
+            & Recall & $0.319$ & $0.325$ & $0.368$ \\
             & F1 & $0.308$ & $0.316$ & $0.358$ \\
         \bottomrule
     \end{tabular}
 \end{table}
-$*^1$ As measured using the best cross-validation metrics, given that Kaggle holdout dataset is unlabeled.
-$*^2$ The model takes too long to train for 29 classes.
+$^{*1}$ As measured using the best cross-validation metrics, given that Kaggle holdout dataset is unlabeled.
+
+$^{*2}$ The model takes too long to train for even a single cv fold for 29 classes.
+
+$^{*3}$ Measured from 30\% of the labeled data separated as test set.
 
 \begin{figure}[h!]
     \centering
@@ -192,13 +235,15 @@ We can see that due to fact that the Wine Reviews dataset has so many classes, t
         Dataset & Rows & Logistic Regression & Support Vector Machine & XGBoost \\
         \midrule
         Breast Cancer & $285$ & $1s$ & $1s$ & $1s$ \\
-        Loans & $X$ & $Xs$ & $Xs$ & $Xs$ \\
-        Wine Reviews & $84.123$ & $125s$ & $>1.800s^{*_2}$ & $420s$ \\
-        AirBnB & $18.316$ & $9s$ & $71s$ & $44s$ \\
+        Loans & $10.000$ & $16s$ & $13s$ & $8$ \\
+        Wine Reviews & $84.123$ & $125s$ & $>1.800s^{*_1}$ & $420s$ \\
+        AirBnB & $18.316$ & $11s$ & $85s$ & $26s$ \\
         \bottomrule
     \end{tabular}
 \end{table}
-$*^2$ The model takes too long to train for 29 classes.
+$^{*1}$ The model takes too long to train for even a single cv fold for 29 classes.
+
+\vspace{1.0cm}
 
 \section{Conclusions}
 \label{sec:Conclusions}
@@ -212,7 +257,9 @@ Furthermore, as the amount of rows was so small, we found that there is a higher
 \vspace{0.5cm}
 
 \subsection{Loans}
-TO DO: Manuel
+With the loans dataset, the several classes presented enough imbalance that the Support Vector Machine was initially having difficulties to complete. We used the \texttt{class\_weight} parameter to compensate the imbalance. This dataset offered us the opportunity to engineer several features. We recognize that the relationships we decided to create for the numerical representation of some columns might influence the model in a negative way. This can be seen because a simple one-hot encoding for all features results in a better performance across all 3 methods. In the end, we decided to commit to our engineered features (since we had achieved a high rank on the Cancer competition already).
+
+For the cross-validation we tried to eliminate any data leaking but we identified one way we leaked data during our process: the frequency and label encoding used for the address state feature. Overall, the process was very illuminating. Feature engineering can be a time-consuming endeavour that can result in data-leakage without providing better results than the use of dummy variables.
 
 \vspace{0.5cm}
 
@@ -224,6 +271,8 @@ One possible strategy to mitigate this issue would be to redefine the labeling s
 We also found that feature extraction played a crucial role in improving model performance. When the model relied solely on the structured numerical and categorical features, its predictive ability remained limited, suggesting that much of the distinguishing information lies within the free-text review descriptions. After incorporating TF–IDF encoding on the review text, we observed a clear and consistent improvement in classification accuracy. This demonstrates that the textual data provides valuable contextual cues about the flavor profile, aroma, and overall sensory experience of each wine, which in turn helps guide the model toward identifying the correct variety. In practical terms, this result highlights how the combination of structured and unstructured data can significantly enhance predictive performance and provide a richer understanding of the domain.
 
 When considering a few sets of different parameters, we have seen that for both the Logistic Regression as well as the XGB Classifier model performed best with the default parameters.
+
+Finally, we observed that for such a high amount of distinct classes, the SVM model is extremely unefficient, taking more than 30 minutes without being able to fit a single cross-validation loop.
 
 \vspace{0.5cm}
 
