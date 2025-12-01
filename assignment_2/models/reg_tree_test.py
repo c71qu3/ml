@@ -10,7 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-from custom_regression_tree import CustomRegressionTree
+from custom_regression_tree2 import CustomRegressionTree
 
 rng = np.random.default_rng(0)
 
