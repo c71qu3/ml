@@ -1,6 +1,6 @@
-PWD c:\Users\mitre\OneDrive\Desktop\TU Wien\Classes\Machine Learning\ml\assignment_1\report
+PWD c:\Users\mitre\OneDrive\Desktop\TU Wien\Classes\Machine Learning\Assignments\Assignment 1 - Submission\report
 INPUT C:\Users\mitre\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\mitre\OneDrive\Desktop\TU Wien\Classes\Machine Learning\ml\assignment_1\report\Group29_BhedaReyesVelarde.tex
+INPUT c:\Users\mitre\OneDrive\Desktop\TU Wien\Classes\Machine Learning\Assignments\Assignment 1 - Submission\report\Group29_BhedaReyesVelarde.tex
 OUTPUT Group29_BhedaReyesVelarde.log
 INPUT C:\Users\mitre\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\mitre\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
@@ -119,6 +119,7 @@ INPUT C:\Users\mitre\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tf
 INPUT C:\Users\mitre\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
 INPUT C:\Users\mitre\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\mitre\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Users\mitre\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\mitre\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt12.tfm
 INPUT C:\Users\mitre\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
 INPUT C:\Users\mitre\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
@@ -128,15 +129,21 @@ INPUT C:\Users\mitre\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi6.tfm
 INPUT C:\Users\mitre\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
 INPUT C:\Users\mitre\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy8.tfm
 INPUT C:\Users\mitre\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
-INPUT C:\Users\mitre\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT .\wine_reviews_cv_performance_example.png
-INPUT .\wine_reviews_cv_performance_example.png
-INPUT .\wine_reviews_cv_performance_example.png
-INPUT .\wine_reviews_cv_performance_example.png
-INPUT .\wine_reviews_cv_performance_example.png
-INPUT .\wine_reviews_cv_performance_example.png
-INPUT .\wine_reviews_cv_performance_example.png
+INPUT .\cancer_eda_example.png
+INPUT .\cancer_eda_example.png
+INPUT .\cancer_eda_example.png
+INPUT .\cancer_eda_example.png
+INPUT .\cancer_eda_example.png
+INPUT .\cancer_eda_example.png
+INPUT .\cancer_eda_example.png
 INPUT C:\Users\mitre\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
+INPUT .\wine_reviews_cv_performance_example.png
+INPUT .\wine_reviews_cv_performance_example.png
+INPUT .\wine_reviews_cv_performance_example.png
+INPUT .\wine_reviews_cv_performance_example.png
+INPUT .\wine_reviews_cv_performance_example.png
+INPUT .\wine_reviews_cv_performance_example.png
+INPUT .\wine_reviews_cv_performance_example.png
 INPUT Group29_BhedaReyesVelarde.aux
 INPUT .\Group29_BhedaReyesVelarde.out
 INPUT .\Group29_BhedaReyesVelarde.out
