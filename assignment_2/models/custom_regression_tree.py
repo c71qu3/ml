@@ -8,11 +8,12 @@ Created on Sun Nov 30 19:46:59 2025
 import numpy as np
 
 class CustomRegressionTree:
-    def __init__(self, max_depth: int = 6, min_samples_split: int = 2, min_samples_leaf: int = 1):
+    def __init__(self, max_depth: int = 6, min_samples_split: int = 2, min_samples_leaf: int = 1, random_state: int=42):
         self.max_depth = max_depth
         self.min_samples_split = min_samples_split
         self.min_samples_leaf = min_samples_leaf
         self.tree = None
+        self.random_state = random_state
 
     def fit(self, X: np.array, y: np.array):
         self.n_features_ = X.shape[1]

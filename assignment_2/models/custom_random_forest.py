@@ -9,22 +9,22 @@ class CustomRandomForest:
     trained on a bootstrapped sample of the data and considers a random subset of
     features for splitting, which helps in creating a robust and generalized model.
     """
-    def __init__(self, n_trees: int = 100, max_depth: int = 10, 
+    def __init__(self, n_estimators: int = 100, max_depth: int = 10, 
                  min_samples_split: int = 2, min_samples_leaf: int = 1, 
-                 max_features: str = 'sqrt', random_state: int = None):
+                 max_features: str = "all", random_state: int = None):
         """
         Initializes the CustomRandomForest.
 
         Args:
-            n_trees (int): The number of regression trees in the forest.
+            n_estimators (int): The number of regression trees in the forest.
             max_depth (int): The maximum depth of each individual tree.
             min_samples_split (int): The minimum number of samples required to split an internal node.
             min_samples_leaf (int): The minimum number of samples required to be at a leaf node.
             max_features (str): The method to determine the number of features to consider for each tree.
-                                Supported values: 'sqrt', 'log2', or an integer.
+                                Supported values: 'sqrt', 'log2', 'all' or an integer.
             random_state (int): Controls the randomness for bootstrapping and feature selection.
         """
-        self.n_trees = n_trees
+        self.n_trees = n_estimators
         self.max_depth = max_depth
         self.min_samples_split = min_samples_split
         self.min_samples_leaf = min_samples_leaf
@@ -94,6 +94,8 @@ class CustomRandomForest:
         """
         Determines the number of features to use for each tree based on max_features.
         """
+        if self.max_features == 'all':
+            self.n_features_sample = n_features
         if self.max_features == 'sqrt':
             self.n_features_sample = int(np.sqrt(n_features))
         elif self.max_features == 'log2':
