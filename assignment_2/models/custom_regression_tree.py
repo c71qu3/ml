@@ -5,7 +5,9 @@ Created on Sun Nov 30 19:46:59 2025
 @author: mitre
 """
 
+
 import numpy as np
+
 
 class CustomRegressionTree:
     """
@@ -55,7 +57,7 @@ class CustomRegressionTree:
     def fit(
             self,
             X: np.ndarray,
-            y: np.ndarray):
+            y: np.ndarray) -> None:
         """
         Builds a regression tree from the training set (X, y).
 
