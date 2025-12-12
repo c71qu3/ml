@@ -8,50 +8,125 @@ Created on Sun Nov 30 19:46:59 2025
 import numpy as np
 
 class CustomRegressionTree:
-    def __init__(self, max_depth: int = 6, min_samples_split: int = 2, min_samples_leaf: int = 1, random_state: int=42):
+    """
+    Custom regression tree implementation intended to mimic the signature of
+    the Scikit-learn tree regressor. Supports hyperparameters for maximum tree
+    depth, minimum samples per split and per leaf.
+    """
+    def __init__(
+            self,
+            max_depth: int=6,
+            min_samples_split: int=2,
+            min_samples_leaf: int=1,
+            random_state: int=42):
+        """
+        Initialize the CustomRegressionTree.
+
+        Args:
+            max_depth (int): Maximum depth of tree.
+            min_samples_split (int): Minimum samples required to split internal nodes.
+            min_samples_leaf (int): Minimum samples required on leaf nodes.
+            random_state (int): Used only to match Scikit-learn parameters.
+
+        Raises:
+            ValueError: If any of the parameters are not valid positive integers.
+        """
+        # Enforce max_depth is positive integer
+        if not isinstance(max_depth, int) or max_depth <= 0:
+            raise ValueError("max_depth must be integer greater than 0")
+
+        # Enforce min_samples_split is positive ingeger
+        if not isinstance(min_samples_split, int) or min_samples_split <= 0:
+            raise ValueError("min_samples_split must be integer greater than 0")
+
+        # Enforce min_samples_leaf is positive ingeger
+        if not isinstance(min_samples_leaf, int) or min_samples_leaf <= 0:
+            raise ValueError("min_samples_leaf must be integer greater than 0")
+
         self.max_depth = max_depth
         self.min_samples_split = min_samples_split
         self.min_samples_leaf = min_samples_leaf
         self.tree = None
-        self.random_state = random_state
 
-    def fit(self, X: np.array, y: np.array):
+        # To match Scikit-learn regression tree
+        _ = random_state
+
+
+    def fit(
+            self,
+            X: np.ndarray,
+            y: np.ndarray):
+        """
+        Builds a regression tree from the training set (X, y).
+
+        Args:
+            X (np.ndarray): Training input samples.
+            y (np.ndarray): Target values.
+        """
         self.n_features_ = X.shape[1]
         self.tree = self.recursive_build_tree(X, y, recurse_depth=0)
 
-    def predict(self, X: np.array):
+
+    def predict(
+            self,
+            X: np.ndarray) -> np.array:
+        """
+        Predict target values for given input samples using the fitted tree.
+
+        Args:
+            X (np.ndarray): Feature matrix of shape (n_samples, n_features).
+
+        Returns:
+            np.ndarray: Predicted target values of shape (n_samples, ).
+        """
         return np.array([self.predict_row(row, self.tree) for row in X])
 
-    def recursive_build_tree(self, X: np.array, y: np.array, recurse_depth: int):
+
+    def recursive_build_tree(
+            self,
+            X: np.array,
+            y: np.array,
+            recurse_depth: int) -> dict:
+        """
+        Recursively build a regression tree node and its children.
+
+        Args:
+            X (np.ndarray): Input samples for the current node.
+            y (np.ndarray): Target values for the current node.
+            recurse_depth (int): Current recursion depth (tree depth).
+
+        Returns:
+            dict: Nested dictionaries representing the current node and its subtree.
+        """
         node = {}
         n_samples, n_features = X.shape
         
         node["value"] = y.mean()
         
-        # Check if the maximum depth parameter is set, and if so, if the current depth is greater or equal than, stops splitting
-        if (self.max_depth is not None and recurse_depth >= self.max_depth):
+        # Check current depth is less than maximum depth
+        if recurse_depth >= self.max_depth:
             node["leaf"] = True
             return node
         
-        # Checks if the number of samples for the split is above the thresold, stops splitting
+        # Check minimum samples required for split are available
         if n_samples < self.min_samples_split:
             node["leaf"] = True
             return node
 
-        # Checks if the amount of labels is 1, stops splitting
+        # Checks if the amount of labels is 1
         if (np.unique(y).size == 1):
             node["leaf"] = True
             return node
 
-        # For each feature, finds the best split point
+        # Find best split point for best feature
         best_feature, best_threshold, best_loss, left_idx, right_idx = self.best_split(X, y)
 
-        # If there is no best feature, stop splitting
+        # Stop splitting if there is no best feature
         if best_feature is None:
             node["leaf"] = True
             return node
 
-        # If the number of samples in either side after the split is less than the threshold, stops splitting
+        # Check tentative leaf node number of samples meets required minimum
         if left_idx.sum() < self.min_samples_leaf or right_idx.sum() < self.min_samples_leaf:
             node["leaf"] = True
             return node
@@ -66,9 +141,30 @@ class CustomRegressionTree:
 
         return node
 
-    def best_split(self, X: np.array, y: np.array):
+
+    def best_split(
+            self,
+            X: np.array,
+            y: np.array) -> tuple:
+        """
+        Identify the best feature and threshold to split the given data to
+        minimize mean squared error (variance).
+
+        Args:
+            X (np.ndarray): Feature matrix for the current node.
+            y (np.ndarray): Target values for the current node.
+
+        Returns:
+            tuple:
+                best_feature (int or None): Index of the best splitting feature.
+                best_threshold (int or None): Threshold for best split.
+                best_loss (float or None): Loss value for the best split.
+                left_idx (np.ndarray or None): Boolean index for left child samples.
+                right_idx (np.ndarray or None): Boolean indes for right child samples.
+        """
         n_samples, n_features = X.shape
-        # If there is only one sample, cannot find any split
+
+        # Stop if there is only one sample
         if n_samples <= 1:
             return None, None, None, None, None
 
@@ -76,7 +172,7 @@ class CustomRegressionTree:
         best_feature = None
         best_threshold = None
 
-        # Checks each feature, evaluates the loss on each possible split per feature and finds the one that minimizes the loss
+        # Checks all features
         for feature in range(n_features):
             X_col = X[:, feature]
             
@@ -87,6 +183,7 @@ class CustomRegressionTree:
             cum_sum = np.cumsum(y_sorted)
             cum_sq_sum = np.cumsum(y_sorted**2)
 
+            # Check all partitions
             for i in range(1, n_samples):
                 if X_sorted[i] == X_sorted[i - 1]:
                     continue
@@ -104,6 +201,7 @@ class CustomRegressionTree:
                 right_loss = right_sq_sum - (right_sum**2) / right_count
                 loss = left_loss + right_loss
 
+                # Find best loss
                 if loss < best_loss:
                     best_loss = loss
                     best_feature = feature
@@ -117,7 +215,21 @@ class CustomRegressionTree:
 
         return best_feature, best_threshold, best_loss, left_idx, right_idx
 
-    def predict_row(self, row: np.array, node: dict):
+
+    def predict_row(
+            self,
+            row: np.array,
+            node: dict) -> float:
+        """
+        Predict the target values for a single input sample using the trained tree.
+
+        Args:
+            row (np.ndarray): Single input sample (1D array of features).
+            node (dict): The current node/subtree in the regression tree.
+
+        Returns:
+            float: The predicted target value for the sample.
+        """
         if node.get("leaf", False):
             return node["value"]
 
