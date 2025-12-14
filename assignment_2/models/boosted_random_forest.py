@@ -4,10 +4,10 @@ supporting sample weights for robust regression.
 """
 
 import numpy as np
-from .weighted_regression_tree import WeightedRegressionTree as WRTree
+from .weighted_regression_tree import WeightedRegressionTree as BRTree
 
 
-class WeightedRandomForest:
+class BoostedRandomForest:
     """
     A custom Random Forest Regressor implementation from scratch.
 
@@ -96,7 +96,7 @@ class WeightedRandomForest:
             self.feature_indices_list.append(feature_indices)
 
             # Initialize and train a regression tree on the sample and feature subset
-            tree = WRTree(
+            tree = BRTree(
                 max_depth=self.max_depth,
                 min_samples_split=self.min_samples_split,
                 min_samples_leaf=self.min_samples_leaf
