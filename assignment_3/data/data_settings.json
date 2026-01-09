@@ -1,0 +1,33 @@
+{
+  "insurance": {
+    "filename": "insurance.csv",
+    "target": "LABEL",
+    "categorical_features": [
+      "SEX",
+      "SMOKER",
+      "REGION",
+      "BMI_CATEGORY",
+      "HAS_CHILDREN"
+    ],
+    "numerical_features": [
+      "AGE"
+    ],
+    "description": "Healthcare Insurance - Charges Prediction (Original POC Dataset)"
+  },
+  "personality": {
+    "filename": "personality.csv",
+    "target": "PERSONALITY",
+    "categorical_features": [
+      "STAGE_FEAR",
+      "SOCIAL_DRAIN",
+      "TIME_ALONE",
+      "EVENT_ATTENDANCE"
+    ],
+    "numerical_features": [
+      "GOING_OUTSIDE",
+      "FRIEND_CIRCLE",
+      "POST_FREQUENCY"
+    ],
+    "description": "Personality Classification (Introvert/Extrovert)"
+  }
+}
