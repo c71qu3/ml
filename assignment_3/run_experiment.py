@@ -8,6 +8,7 @@ from xgboost import XGBClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 from helper_functions import *
 from attribute_inference_parallel import *
@@ -58,6 +59,9 @@ def main(
     tree_importances = pd.DataFrame({
         'dataset': [], 'model': [], 'variant': [],
         'feature': [], 'importance': []})
+    model_performance = pd.DataFrame({
+        'dataset': [], 'model': [], 'variant': [],
+        'accuracy': [], 'precision': [], 'recall': [], 'f1': []})
     for dataset in data_config:
 
         # Load dataset
@@ -97,6 +101,32 @@ def main(
                 row['model'] = model_name
                 row['dataset'] = dataset
             all_parameters += parameters
+
+        # Evaluate each model/variant on test set
+        for m in trained_variants:
+            for v, p in trained_variants[m].items():
+                y_pred = p.predict(X_tst)
+                model_performance = pd.concat([
+                    model_performance,
+                    pd.DataFrame([{
+                        'dataset': dataset,
+                        'model': m, 'variant': v,
+                        'accuracy': accuracy_score(
+                            y_tst, y_pred),
+                        'precision': precision_score(
+                            y_tst, y_pred,
+                            average="weighted",
+                            zero_division=0),
+                        'recall': recall_score(
+                            y_tst, y_pred,
+                            average="weighted",
+                            zero_division=0),
+                        'f1': f1_score(
+                            y_tst, y_pred,
+                            average="weighted",
+                            zero_division=0)
+                    }])
+                ], ignore_index=True)
 
         # Save decision tree feature importance
         for m in trained_variants:
@@ -141,7 +171,7 @@ def main(
         attack_results = pd.concat(
             [attack_results, pd.DataFrame(results_rows)],
             ignore_index=True)
-    return attack_results, all_parameters, tree_importances
+    return attack_results, all_parameters, tree_importances, model_performance
 
 
 if __name__ == "__main__":
@@ -189,6 +219,7 @@ if __name__ == "__main__":
     parser.add_argument(
         '-i', '--with-images',
         type=bool, required=False,
+        default=False,
         help="Flag to generate report images.")
 
     parser.add_argument(
@@ -209,7 +240,7 @@ if __name__ == "__main__":
         data_config = json.load(file)
 
 
-    results, parameters, importances = main(
+    results, parameters, importances, performance = main(
         data_config=data_config,
         model_config=model_config,
         data_directory=args.data_dir,
@@ -232,6 +263,11 @@ if __name__ == "__main__":
 
     filename = f"{timestamp}_feature_importance.csv"
     importances.to_csv(
+        os.path.join(DATA_DIRECTORY, "output", filename),
+        index=False)
+
+    filename = f"{timestamp}_model_performance.csv"
+    performance.to_csv(
         os.path.join(DATA_DIRECTORY, "output", filename),
         index=False)
 

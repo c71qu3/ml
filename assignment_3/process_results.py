@@ -98,39 +98,82 @@ def correlation_attack_importance(timestamp: str) -> None:
 #     attack = attack[attack["split"] == "Test"]
 
 #     all_datasets = attack["dataset"].unique()
-#     # merged = pd.DataFrame({
-#     #     "dataset": [], "feature": [], "model": [], "variant": [],
-#     #     "random": [], "majority": [], "accuracy": [], "importance": []})
 #     for dataset in all_datasets:
+#         data = pd.read_csv(
+#             os.path.join("data", f"{dataset}.csv"))
 #         all_features = attack[attack["dataset"] == dataset]["feature"].unique()
-#         data = pd.read_csv(f'{dataset}.csv')
-#         merged = pd.concat(
-#             [merged, merge_result_features(
-#                 attack[attack["dataset"] == dataset],
-#                 importance[importance["dataset"] == dataset])],
-#             ignore_index=True)
-#     print(merged["dataset"].unique())
+#         for feature in all_features:
+#             unique_values = data[feature].unique()
+#             attack.loc[
+#                 (attack["dataset"] == dataset) & (attack["feature"] == feature),
+#                 "unique_count"] = len(unique_values)
 
 #     os.makedirs("images", exist_ok=True)
-#     path = os.path.join("images", "importance_vs_attack_accuracy.png")
+#     path = os.path.join("images", f"{timestamp}_count_vs_accuracy.png")
 
-#     fig, ax = plt.subplots()
-#     for idx, dataset in enumerate(merged['dataset'].unique()):
-#         data = merged[merged['dataset'] == dataset]
-#         ax.scatter(
-#             data['importance'], data['accuracy'],
-#             label=dataset
-#         )
-#     ax.set_xlabel('Feature Importance')
-#     ax.set_ylabel('Inference Attack Accuracy')
-#     ax.set_title('Feature Importance vs. Attack Accuracy')
-#     ax.legend(title='Dataset')
+#     for variant in ["Underfit", "Optimal", "Overfit"]:
+#         plot_data = attack[attack['variant'] == variant]
 
-#     plt.savefig(path)
+#         fig, ax = plt.subplots()
+#         for idx, dataset in enumerate(all_datasets):
+#             data = plot_data[plot_data['dataset'] == dataset]
+#             ax.scatter(
+#                 data['unique_count'], data['accuracy'],
+#                 label=dataset
+#             )
+#         ax.set_xlabel('Feature Value Count')
+#         ax.set_ylabel('Inference Attack Accuracy')
+#         ax.set_title('Feature Value Count vs. Attack Accuracy')
+#         ax.legend(title='Dataset')
+
+#         plt.savefig(path)
+
+
+def correlation_attack_unique(timestamp: str) -> None:
+
+    attack = get_latest_file("attack_results")
+    attack = attack[attack["split"] == "Test"]
+
+    all_datasets = attack["dataset"].unique()
+    for dataset in all_datasets:
+        data = pd.read_csv(
+            os.path.join("data", f"{dataset}.csv"))
+        all_features = attack[attack["dataset"] == dataset]["feature"].unique()
+        for feature in all_features:
+            unique_values = data[feature].unique()
+            attack.loc[
+                (attack["dataset"] == dataset) & (attack["feature"] == feature),
+                "unique_count"] = len(unique_values)
+
+    os.makedirs("images", exist_ok=True)
+    path = os.path.join("images", f"{timestamp}_count_vs_accuracy.png")
+
+    variants = ["Underfit", "Optimal", "Overfit"]
+    fig, axes = plt.subplots(1, 3, figsize=(18, 5), sharex=True, sharey=True)
+
+    for idx, variant in enumerate(variants):
+        plot_data = attack[attack['variant'] == variant]
+        ax = axes[idx]
+        for dataset in all_datasets:
+            data = plot_data[plot_data['dataset'] == dataset]
+            ax.scatter(
+                data['unique_count'], data['accuracy'],
+                label=dataset
+            )
+        ax.set_title(variant)
+        if idx == 0:
+            ax.set_ylabel('Inference Attack Accuracy')
+        ax.set_xlabel('Feature Value Count')
+        if idx == 2:
+            ax.legend(title='Dataset')
+
+    fig.suptitle('Feature Value Count vs. Attack Accuracy (by Variant)')
+    plt.tight_layout(rect=[0, 0.03, 1, 0.95])
+    plt.savefig(path)
 
 
 if __name__ == "__main__":
 
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-    correlation_attack_importance(timestamp)
-    # correlation_attack_unique(timestamp)
+    # correlation_attack_importance(timestamp)
+    correlation_attack_unique(timestamp)

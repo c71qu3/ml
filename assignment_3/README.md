@@ -98,7 +98,7 @@ To run the experiment on a new dataset a JSON configuration file is required:
 ```{json}
 {
   "dataset_identifier": {
-    "filename": "dataset_filename.csv",
+    "filename": "dataset_identifier.csv",
     "target": "target_column_name",
     "categorical_features": [
       "categorical_column_1_name",
@@ -113,8 +113,8 @@ To run the experiment on a new dataset a JSON configuration file is required:
 }
 ```
 
-- `dataset_identifier` can be any string value used to identify the dataset in the results.
-- `filename` should have the name of a CSV file in the `./data/` directory.
+- `dataset_identifier` string value used to identify the dataset in the results, should match the `filename` property.
+- `filename` should have the name of a CSV file in the data directory: `f"./data/{dataset_identifier}.csv"`.
 - `target` should have the column name for the feature the tree-based models will predict.
 - `categorical_features` should list all the column names of categorical features in the dataset included in the experiment.
 - `numerical_features` should list all numerical columns to be included in the tree-based models.
