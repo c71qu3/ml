@@ -1,0 +1,21 @@
+{
+  "occupation": {
+    "filename": "occupation.csv",
+    "target": "INCOME",
+    "categorical_features": [
+      "EDUCATION",
+      "MARITAL_STATUS",
+      "OCCUPATION",
+      "RACE",
+      "GENDER"
+    ],
+    "numerical_features": [
+      "AGE",
+      "EDUCATION_YEARS",
+      "CAPITAL_GAIN",
+      "CAPITAL_LOSS",
+      "HOURS_PER_WEEK"
+    ],
+    "description": "Income Prediction (<=50K / >50K) - Adult Census Data"
+  }
+}

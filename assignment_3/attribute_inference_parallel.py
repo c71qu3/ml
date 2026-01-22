@@ -2,7 +2,8 @@ from sklearn.pipeline import Pipeline
 import pandas as pd
 from typing import List, Any
 import numpy as np
-from sklearn.utils.parallel import Parallel, delayed
+# from sklearn.utils.parallel import Parallel, delayed
+from joblib import Parallel, delayed
 # import warnings
 
 

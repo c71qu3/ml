@@ -1,0 +1,847 @@
+dataset,model,variant,feature,importance
+insurance,XGBoost,Optimal,cat__SEX_female,0.03356289491057396
+insurance,XGBoost,Optimal,cat__SEX_male,0.0
+insurance,XGBoost,Optimal,cat__SMOKER_no,0.42174485325813293
+insurance,XGBoost,Optimal,cat__SMOKER_yes,0.0
+insurance,XGBoost,Optimal,cat__REGION_northeast,0.02398226410150528
+insurance,XGBoost,Optimal,cat__REGION_northwest,0.017834290862083435
+insurance,XGBoost,Optimal,cat__REGION_southeast,0.019287114962935448
+insurance,XGBoost,Optimal,cat__REGION_southwest,0.01804986037313938
+insurance,XGBoost,Optimal,cat__BMI_CATEGORY_0_UNDERWEIGHT,0.010380088351666927
+insurance,XGBoost,Optimal,cat__BMI_CATEGORY_1_HEALTHY,0.020373621955513954
+insurance,XGBoost,Optimal,cat__BMI_CATEGORY_2_OVERWEIGHT,0.02516775391995907
+insurance,XGBoost,Optimal,cat__BMI_CATEGORY_3_OBESITY,0.14714650809764862
+insurance,XGBoost,Optimal,cat__HAS_CHILDREN_False,0.06930245459079742
+insurance,XGBoost,Optimal,cat__HAS_CHILDREN_True,0.0
+insurance,XGBoost,Optimal,num__AGE,0.1931682974100113
+insurance,XGBoost,Underfit,cat__SEX_female,0.0
+insurance,XGBoost,Underfit,cat__SEX_male,0.0
+insurance,XGBoost,Underfit,cat__SMOKER_no,0.6315540671348572
+insurance,XGBoost,Underfit,cat__SMOKER_yes,0.0
+insurance,XGBoost,Underfit,cat__REGION_northeast,0.0
+insurance,XGBoost,Underfit,cat__REGION_northwest,0.0
+insurance,XGBoost,Underfit,cat__REGION_southeast,0.0
+insurance,XGBoost,Underfit,cat__REGION_southwest,0.0
+insurance,XGBoost,Underfit,cat__BMI_CATEGORY_0_UNDERWEIGHT,0.0
+insurance,XGBoost,Underfit,cat__BMI_CATEGORY_1_HEALTHY,0.0
+insurance,XGBoost,Underfit,cat__BMI_CATEGORY_2_OVERWEIGHT,0.0
+insurance,XGBoost,Underfit,cat__BMI_CATEGORY_3_OBESITY,0.0
+insurance,XGBoost,Underfit,cat__HAS_CHILDREN_False,0.0
+insurance,XGBoost,Underfit,cat__HAS_CHILDREN_True,0.0
+insurance,XGBoost,Underfit,num__AGE,0.3684459924697876
+insurance,XGBoost,Overfit,cat__SEX_female,0.018325861543416977
+insurance,XGBoost,Overfit,cat__SEX_male,0.0
+insurance,XGBoost,Overfit,cat__SMOKER_no,0.6802349090576172
+insurance,XGBoost,Overfit,cat__SMOKER_yes,0.0
+insurance,XGBoost,Overfit,cat__REGION_northeast,0.016884498298168182
+insurance,XGBoost,Overfit,cat__REGION_northwest,0.013183927163481712
+insurance,XGBoost,Overfit,cat__REGION_southeast,0.01753043197095394
+insurance,XGBoost,Overfit,cat__REGION_southwest,0.012291704304516315
+insurance,XGBoost,Overfit,cat__BMI_CATEGORY_0_UNDERWEIGHT,0.022465545684099197
+insurance,XGBoost,Overfit,cat__BMI_CATEGORY_1_HEALTHY,0.014909227378666401
+insurance,XGBoost,Overfit,cat__BMI_CATEGORY_2_OVERWEIGHT,0.021260477602481842
+insurance,XGBoost,Overfit,cat__BMI_CATEGORY_3_OBESITY,0.058538466691970825
+insurance,XGBoost,Overfit,cat__HAS_CHILDREN_False,0.0514780730009079
+insurance,XGBoost,Overfit,cat__HAS_CHILDREN_True,0.0
+insurance,XGBoost,Overfit,num__AGE,0.07289688289165497
+insurance,Decision Tree,Optimal,cat__SEX_female,0.013801972183304836
+insurance,Decision Tree,Optimal,cat__SEX_male,0.0
+insurance,Decision Tree,Optimal,cat__SMOKER_no,0.0
+insurance,Decision Tree,Optimal,cat__SMOKER_yes,0.20192483384148852
+insurance,Decision Tree,Optimal,cat__REGION_northeast,0.0064903701948811465
+insurance,Decision Tree,Optimal,cat__REGION_northwest,0.001838417710764423
+insurance,Decision Tree,Optimal,cat__REGION_southeast,0.0
+insurance,Decision Tree,Optimal,cat__REGION_southwest,0.0
+insurance,Decision Tree,Optimal,cat__BMI_CATEGORY_0_UNDERWEIGHT,0.0
+insurance,Decision Tree,Optimal,cat__BMI_CATEGORY_1_HEALTHY,0.0
+insurance,Decision Tree,Optimal,cat__BMI_CATEGORY_2_OVERWEIGHT,0.0
+insurance,Decision Tree,Optimal,cat__BMI_CATEGORY_3_OBESITY,0.049435316484244346
+insurance,Decision Tree,Optimal,cat__HAS_CHILDREN_False,0.013501775504289864
+insurance,Decision Tree,Optimal,cat__HAS_CHILDREN_True,0.03578605738931931
+insurance,Decision Tree,Optimal,num__AGE,0.6772212566917076
+insurance,Decision Tree,Underfit,cat__SEX_female,0.0
+insurance,Decision Tree,Underfit,cat__SEX_male,0.0
+insurance,Decision Tree,Underfit,cat__SMOKER_no,0.0
+insurance,Decision Tree,Underfit,cat__SMOKER_yes,0.23127995029397155
+insurance,Decision Tree,Underfit,cat__REGION_northeast,0.0
+insurance,Decision Tree,Underfit,cat__REGION_northwest,0.0
+insurance,Decision Tree,Underfit,cat__REGION_southeast,0.0
+insurance,Decision Tree,Underfit,cat__REGION_southwest,0.0
+insurance,Decision Tree,Underfit,cat__BMI_CATEGORY_0_UNDERWEIGHT,0.0
+insurance,Decision Tree,Underfit,cat__BMI_CATEGORY_1_HEALTHY,0.0
+insurance,Decision Tree,Underfit,cat__BMI_CATEGORY_2_OVERWEIGHT,0.0
+insurance,Decision Tree,Underfit,cat__BMI_CATEGORY_3_OBESITY,0.05662204752991418
+insurance,Decision Tree,Underfit,cat__HAS_CHILDREN_False,0.0
+insurance,Decision Tree,Underfit,cat__HAS_CHILDREN_True,0.0
+insurance,Decision Tree,Underfit,num__AGE,0.7120980021761143
+insurance,Decision Tree,Overfit,cat__SEX_female,0.01257733751165435
+insurance,Decision Tree,Overfit,cat__SEX_male,0.011785933508239723
+insurance,Decision Tree,Overfit,cat__SMOKER_no,0.0
+insurance,Decision Tree,Overfit,cat__SMOKER_yes,0.18634331035701204
+insurance,Decision Tree,Overfit,cat__REGION_northeast,0.011528220533193084
+insurance,Decision Tree,Overfit,cat__REGION_northwest,0.00340345491875655
+insurance,Decision Tree,Overfit,cat__REGION_southeast,0.003989532323984068
+insurance,Decision Tree,Overfit,cat__REGION_southwest,0.0008436273250067429
+insurance,Decision Tree,Overfit,cat__BMI_CATEGORY_0_UNDERWEIGHT,0.0
+insurance,Decision Tree,Overfit,cat__BMI_CATEGORY_1_HEALTHY,0.0030643686268016623
+insurance,Decision Tree,Overfit,cat__BMI_CATEGORY_2_OVERWEIGHT,0.014280883266143537
+insurance,Decision Tree,Overfit,cat__BMI_CATEGORY_3_OBESITY,0.04907525628266463
+insurance,Decision Tree,Overfit,cat__HAS_CHILDREN_False,0.025380081894358093
+insurance,Decision Tree,Overfit,cat__HAS_CHILDREN_True,0.03242438853115675
+insurance,Decision Tree,Overfit,num__AGE,0.6453036049210289
+insurance,Random Forest,Optimal,cat__SEX_female,0.010542462296845438
+insurance,Random Forest,Optimal,cat__SEX_male,0.010641839472923189
+insurance,Random Forest,Optimal,cat__SMOKER_no,0.1175752173531562
+insurance,Random Forest,Optimal,cat__SMOKER_yes,0.11308414570146218
+insurance,Random Forest,Optimal,cat__REGION_northeast,0.013489735726648423
+insurance,Random Forest,Optimal,cat__REGION_northwest,0.009840454393344715
+insurance,Random Forest,Optimal,cat__REGION_southeast,0.012794765511871274
+insurance,Random Forest,Optimal,cat__REGION_southwest,0.011888575888432444
+insurance,Random Forest,Optimal,cat__BMI_CATEGORY_0_UNDERWEIGHT,0.004836449229982861
+insurance,Random Forest,Optimal,cat__BMI_CATEGORY_1_HEALTHY,0.018236229133537313
+insurance,Random Forest,Optimal,cat__BMI_CATEGORY_2_OVERWEIGHT,0.017110823066674486
+insurance,Random Forest,Optimal,cat__BMI_CATEGORY_3_OBESITY,0.030091384251011957
+insurance,Random Forest,Optimal,cat__HAS_CHILDREN_False,0.025325567702667973
+insurance,Random Forest,Optimal,cat__HAS_CHILDREN_True,0.02613645920365097
+insurance,Random Forest,Optimal,num__AGE,0.5784058910677905
+insurance,Random Forest,Underfit,cat__SEX_female,0.008993535667203987
+insurance,Random Forest,Underfit,cat__SEX_male,0.00830469299357806
+insurance,Random Forest,Underfit,cat__SMOKER_no,0.17094735107102507
+insurance,Random Forest,Underfit,cat__SMOKER_yes,0.1720504235075708
+insurance,Random Forest,Underfit,cat__REGION_northeast,0.009974371001040162
+insurance,Random Forest,Underfit,cat__REGION_northwest,0.006483191291070583
+insurance,Random Forest,Underfit,cat__REGION_southeast,0.01029353762024056
+insurance,Random Forest,Underfit,cat__REGION_southwest,0.008792950083023783
+insurance,Random Forest,Underfit,cat__BMI_CATEGORY_0_UNDERWEIGHT,0.00605956805344946
+insurance,Random Forest,Underfit,cat__BMI_CATEGORY_1_HEALTHY,0.018783310960254828
+insurance,Random Forest,Underfit,cat__BMI_CATEGORY_2_OVERWEIGHT,0.016920990437788608
+insurance,Random Forest,Underfit,cat__BMI_CATEGORY_3_OBESITY,0.03472310853910251
+insurance,Random Forest,Underfit,cat__HAS_CHILDREN_False,0.038539524605132644
+insurance,Random Forest,Underfit,cat__HAS_CHILDREN_True,0.03295410800518441
+insurance,Random Forest,Underfit,num__AGE,0.45617933616433454
+insurance,Random Forest,Overfit,cat__SEX_female,0.010220069936892074
+insurance,Random Forest,Overfit,cat__SEX_male,0.011034923663401076
+insurance,Random Forest,Overfit,cat__SMOKER_no,0.09977549629795246
+insurance,Random Forest,Overfit,cat__SMOKER_yes,0.09660487126587713
+insurance,Random Forest,Overfit,cat__REGION_northeast,0.014325169641754227
+insurance,Random Forest,Overfit,cat__REGION_northwest,0.011644350473529949
+insurance,Random Forest,Overfit,cat__REGION_southeast,0.013262643919598183
+insurance,Random Forest,Overfit,cat__REGION_southwest,0.012217048037877262
+insurance,Random Forest,Overfit,cat__BMI_CATEGORY_0_UNDERWEIGHT,0.004516756853239982
+insurance,Random Forest,Overfit,cat__BMI_CATEGORY_1_HEALTHY,0.016969815339854664
+insurance,Random Forest,Overfit,cat__BMI_CATEGORY_2_OVERWEIGHT,0.018194641159267468
+insurance,Random Forest,Overfit,cat__BMI_CATEGORY_3_OBESITY,0.02954975152241053
+insurance,Random Forest,Overfit,cat__HAS_CHILDREN_False,0.023068339969080292
+insurance,Random Forest,Overfit,cat__HAS_CHILDREN_True,0.02241696607170742
+insurance,Random Forest,Overfit,num__AGE,0.6161991558475574
+personality,XGBoost,Optimal,cat__STAGE_FEAR_No,0.04953356832265854
+personality,XGBoost,Optimal,cat__STAGE_FEAR_Yes,0.0
+personality,XGBoost,Optimal,cat__SOCIAL_DRAIN_No,0.03801653906702995
+personality,XGBoost,Optimal,cat__SOCIAL_DRAIN_Yes,0.0
+personality,XGBoost,Optimal,cat__TIME_ALONE_0_LOW,0.01869039237499237
+personality,XGBoost,Optimal,cat__TIME_ALONE_1_MEDIUM,0.0
+personality,XGBoost,Optimal,cat__TIME_ALONE_2_HIGH,0.06083086133003235
+personality,XGBoost,Optimal,cat__EVENT_ATTENDANCE_0_RARE,0.1794147491455078
+personality,XGBoost,Optimal,cat__EVENT_ATTENDANCE_1_MODERATE,0.0
+personality,XGBoost,Optimal,cat__EVENT_ATTENDANCE_2_FREQUENT,0.08196649700403214
+personality,XGBoost,Optimal,num__GOING_OUTSIDE,0.3421132266521454
+personality,XGBoost,Optimal,num__FRIEND_CIRCLE,0.14924809336662292
+personality,XGBoost,Optimal,num__POST_FREQUENCY,0.08018607646226883
+personality,XGBoost,Underfit,cat__STAGE_FEAR_No,0.0
+personality,XGBoost,Underfit,cat__STAGE_FEAR_Yes,0.0
+personality,XGBoost,Underfit,cat__SOCIAL_DRAIN_No,0.0
+personality,XGBoost,Underfit,cat__SOCIAL_DRAIN_Yes,0.0
+personality,XGBoost,Underfit,cat__TIME_ALONE_0_LOW,0.0
+personality,XGBoost,Underfit,cat__TIME_ALONE_1_MEDIUM,0.0
+personality,XGBoost,Underfit,cat__TIME_ALONE_2_HIGH,0.0
+personality,XGBoost,Underfit,cat__EVENT_ATTENDANCE_0_RARE,0.0
+personality,XGBoost,Underfit,cat__EVENT_ATTENDANCE_1_MODERATE,0.0
+personality,XGBoost,Underfit,cat__EVENT_ATTENDANCE_2_FREQUENT,0.0
+personality,XGBoost,Underfit,num__GOING_OUTSIDE,1.0
+personality,XGBoost,Underfit,num__FRIEND_CIRCLE,0.0
+personality,XGBoost,Underfit,num__POST_FREQUENCY,0.0
+personality,XGBoost,Overfit,cat__STAGE_FEAR_No,0.0012759541859850287
+personality,XGBoost,Overfit,cat__STAGE_FEAR_Yes,0.0
+personality,XGBoost,Overfit,cat__SOCIAL_DRAIN_No,0.001829356886446476
+personality,XGBoost,Overfit,cat__SOCIAL_DRAIN_Yes,0.0
+personality,XGBoost,Overfit,cat__TIME_ALONE_0_LOW,0.0014737164601683617
+personality,XGBoost,Overfit,cat__TIME_ALONE_1_MEDIUM,0.00026931386673823
+personality,XGBoost,Overfit,cat__TIME_ALONE_2_HIGH,0.07685219496488571
+personality,XGBoost,Overfit,cat__EVENT_ATTENDANCE_0_RARE,0.49050021171569824
+personality,XGBoost,Overfit,cat__EVENT_ATTENDANCE_1_MODERATE,0.0007730363286100328
+personality,XGBoost,Overfit,cat__EVENT_ATTENDANCE_2_FREQUENT,0.3183360695838928
+personality,XGBoost,Overfit,num__GOING_OUTSIDE,0.0766105130314827
+personality,XGBoost,Overfit,num__FRIEND_CIRCLE,0.021974850445985794
+personality,XGBoost,Overfit,num__POST_FREQUENCY,0.010104740038514137
+personality,Decision Tree,Optimal,cat__STAGE_FEAR_No,0.0022240791208279183
+personality,Decision Tree,Optimal,cat__STAGE_FEAR_Yes,0.0011362973716899315
+personality,Decision Tree,Optimal,cat__SOCIAL_DRAIN_No,0.007578807547384439
+personality,Decision Tree,Optimal,cat__SOCIAL_DRAIN_Yes,0.0
+personality,Decision Tree,Optimal,cat__TIME_ALONE_0_LOW,0.0016712348598440267
+personality,Decision Tree,Optimal,cat__TIME_ALONE_1_MEDIUM,0.0003095900545848459
+personality,Decision Tree,Optimal,cat__TIME_ALONE_2_HIGH,0.0017474907377933678
+personality,Decision Tree,Optimal,cat__EVENT_ATTENDANCE_0_RARE,0.011889588365823864
+personality,Decision Tree,Optimal,cat__EVENT_ATTENDANCE_1_MODERATE,0.0022658069993943385
+personality,Decision Tree,Optimal,cat__EVENT_ATTENDANCE_2_FREQUENT,0.0673749378079041
+personality,Decision Tree,Optimal,num__GOING_OUTSIDE,0.4524858594043339
+personality,Decision Tree,Optimal,num__FRIEND_CIRCLE,0.2964749925052678
+personality,Decision Tree,Optimal,num__POST_FREQUENCY,0.15484131522515154
+personality,Decision Tree,Underfit,cat__STAGE_FEAR_No,0.0
+personality,Decision Tree,Underfit,cat__STAGE_FEAR_Yes,0.0
+personality,Decision Tree,Underfit,cat__SOCIAL_DRAIN_No,0.007952122123534647
+personality,Decision Tree,Underfit,cat__SOCIAL_DRAIN_Yes,0.0
+personality,Decision Tree,Underfit,cat__TIME_ALONE_0_LOW,0.0
+personality,Decision Tree,Underfit,cat__TIME_ALONE_1_MEDIUM,0.0
+personality,Decision Tree,Underfit,cat__TIME_ALONE_2_HIGH,0.0
+personality,Decision Tree,Underfit,cat__EVENT_ATTENDANCE_0_RARE,0.0
+personality,Decision Tree,Underfit,cat__EVENT_ATTENDANCE_1_MODERATE,0.0
+personality,Decision Tree,Underfit,cat__EVENT_ATTENDANCE_2_FREQUENT,0.07069367181634117
+personality,Decision Tree,Underfit,num__GOING_OUTSIDE,0.47456929199053155
+personality,Decision Tree,Underfit,num__FRIEND_CIRCLE,0.29670448773190067
+personality,Decision Tree,Underfit,num__POST_FREQUENCY,0.1500804263376919
+personality,Decision Tree,Overfit,cat__STAGE_FEAR_No,0.0
+personality,Decision Tree,Overfit,cat__STAGE_FEAR_Yes,0.0033455474420768074
+personality,Decision Tree,Overfit,cat__SOCIAL_DRAIN_No,0.007545362926029255
+personality,Decision Tree,Overfit,cat__SOCIAL_DRAIN_Yes,0.0
+personality,Decision Tree,Overfit,cat__TIME_ALONE_0_LOW,0.002042937249314339
+personality,Decision Tree,Overfit,cat__TIME_ALONE_1_MEDIUM,9.076303584009594e-05
+personality,Decision Tree,Overfit,cat__TIME_ALONE_2_HIGH,0.0017397792125063377
+personality,Decision Tree,Overfit,cat__EVENT_ATTENDANCE_0_RARE,0.00011772439115767523
+personality,Decision Tree,Overfit,cat__EVENT_ATTENDANCE_1_MODERATE,0.01397520444022091
+personality,Decision Tree,Overfit,cat__EVENT_ATTENDANCE_2_FREQUENT,0.06707761804226471
+personality,Decision Tree,Overfit,num__GOING_OUTSIDE,0.4509947582647606
+personality,Decision Tree,Overfit,num__FRIEND_CIRCLE,0.2962035940865154
+personality,Decision Tree,Overfit,num__POST_FREQUENCY,0.15686671090931387
+personality,Random Forest,Optimal,cat__STAGE_FEAR_No,0.030726820629975223
+personality,Random Forest,Optimal,cat__STAGE_FEAR_Yes,0.05358694438134098
+personality,Random Forest,Optimal,cat__SOCIAL_DRAIN_No,0.013714301182724677
+personality,Random Forest,Optimal,cat__SOCIAL_DRAIN_Yes,0.020347402818768814
+personality,Random Forest,Optimal,cat__TIME_ALONE_0_LOW,0.011290365402745774
+personality,Random Forest,Optimal,cat__TIME_ALONE_1_MEDIUM,0.004501419955193358
+personality,Random Forest,Optimal,cat__TIME_ALONE_2_HIGH,0.06688963389768947
+personality,Random Forest,Optimal,cat__EVENT_ATTENDANCE_0_RARE,0.19174507408499614
+personality,Random Forest,Optimal,cat__EVENT_ATTENDANCE_1_MODERATE,0.01414473140269267
+personality,Random Forest,Optimal,cat__EVENT_ATTENDANCE_2_FREQUENT,0.042953596299947876
+personality,Random Forest,Optimal,num__GOING_OUTSIDE,0.26869347628746265
+personality,Random Forest,Optimal,num__FRIEND_CIRCLE,0.1729394406030472
+personality,Random Forest,Optimal,num__POST_FREQUENCY,0.10846679305341515
+personality,Random Forest,Underfit,cat__STAGE_FEAR_No,0.03962374528111735
+personality,Random Forest,Underfit,cat__STAGE_FEAR_Yes,0.06028989795277205
+personality,Random Forest,Underfit,cat__SOCIAL_DRAIN_No,0.007355012116452005
+personality,Random Forest,Underfit,cat__SOCIAL_DRAIN_Yes,0.01941073487011708
+personality,Random Forest,Underfit,cat__TIME_ALONE_0_LOW,0.009577991131867475
+personality,Random Forest,Underfit,cat__TIME_ALONE_1_MEDIUM,0.006736145428998448
+personality,Random Forest,Underfit,cat__TIME_ALONE_2_HIGH,0.04831031698138189
+personality,Random Forest,Underfit,cat__EVENT_ATTENDANCE_0_RARE,0.26710470984729956
+personality,Random Forest,Underfit,cat__EVENT_ATTENDANCE_1_MODERATE,0.012782349241630804
+personality,Random Forest,Underfit,cat__EVENT_ATTENDANCE_2_FREQUENT,0.04132756337413048
+personality,Random Forest,Underfit,num__GOING_OUTSIDE,0.18469725675478996
+personality,Random Forest,Underfit,num__FRIEND_CIRCLE,0.19364543580861696
+personality,Random Forest,Underfit,num__POST_FREQUENCY,0.10913884121082608
+personality,Random Forest,Overfit,cat__STAGE_FEAR_No,0.04983654320988246
+personality,Random Forest,Overfit,cat__STAGE_FEAR_Yes,0.037783509541706305
+personality,Random Forest,Overfit,cat__SOCIAL_DRAIN_No,0.016784541991181755
+personality,Random Forest,Overfit,cat__SOCIAL_DRAIN_Yes,0.017654807306247657
+personality,Random Forest,Overfit,cat__TIME_ALONE_0_LOW,0.014829829971242567
+personality,Random Forest,Overfit,cat__TIME_ALONE_1_MEDIUM,0.003474538412596613
+personality,Random Forest,Overfit,cat__TIME_ALONE_2_HIGH,0.05573401157567822
+personality,Random Forest,Overfit,cat__EVENT_ATTENDANCE_0_RARE,0.174131898100709
+personality,Random Forest,Overfit,cat__EVENT_ATTENDANCE_1_MODERATE,0.021826438783188937
+personality,Random Forest,Overfit,cat__EVENT_ATTENDANCE_2_FREQUENT,0.06227498790856178
+personality,Random Forest,Overfit,num__GOING_OUTSIDE,0.2588216151067523
+personality,Random Forest,Overfit,num__FRIEND_CIRCLE,0.1619933098363491
+personality,Random Forest,Overfit,num__POST_FREQUENCY,0.12485396825590336
+occupation,XGBoost,Optimal,cat__EDUCATION_10th,0.0017645045882090926
+occupation,XGBoost,Optimal,cat__EDUCATION_11th,0.004987283144146204
+occupation,XGBoost,Optimal,cat__EDUCATION_12th,0.0010889972327277064
+occupation,XGBoost,Optimal,cat__EDUCATION_1st-4th,0.0007221688865683973
+occupation,XGBoost,Optimal,cat__EDUCATION_5th-6th,0.0
+occupation,XGBoost,Optimal,cat__EDUCATION_7th-8th,0.0026941963005810976
+occupation,XGBoost,Optimal,cat__EDUCATION_9th,0.003408843418583274
+occupation,XGBoost,Optimal,cat__EDUCATION_Assoc-acdm,0.00587633578106761
+occupation,XGBoost,Optimal,cat__EDUCATION_Assoc-voc,0.009182451292872429
+occupation,XGBoost,Optimal,cat__EDUCATION_Bachelors,0.007435494102537632
+occupation,XGBoost,Optimal,cat__EDUCATION_Doctorate,0.006776667200028896
+occupation,XGBoost,Optimal,cat__EDUCATION_HS-grad,0.012135622091591358
+occupation,XGBoost,Optimal,cat__EDUCATION_Masters,0.002966808620840311
+occupation,XGBoost,Optimal,cat__EDUCATION_Preschool,0.0
+occupation,XGBoost,Optimal,cat__EDUCATION_Prof-school,0.002755392575636506
+occupation,XGBoost,Optimal,cat__EDUCATION_Some-college,0.003768186317756772
+occupation,XGBoost,Optimal,cat__MARITAL_STATUS_Divorced,0.004304797388613224
+occupation,XGBoost,Optimal,cat__MARITAL_STATUS_Married-AF-spouse,0.0
+occupation,XGBoost,Optimal,cat__MARITAL_STATUS_Married-civ-spouse,0.6290359497070312
+occupation,XGBoost,Optimal,cat__MARITAL_STATUS_Married-spouse-absent,0.007543287239968777
+occupation,XGBoost,Optimal,cat__MARITAL_STATUS_Never-married,0.011187177151441574
+occupation,XGBoost,Optimal,cat__MARITAL_STATUS_Separated,0.004634155426174402
+occupation,XGBoost,Optimal,cat__MARITAL_STATUS_Widowed,0.011589252389967442
+occupation,XGBoost,Optimal,cat__OCCUPATION_Adm-clerical,0.008750065229833126
+occupation,XGBoost,Optimal,cat__OCCUPATION_Armed-Forces,0.0
+occupation,XGBoost,Optimal,cat__OCCUPATION_Craft-repair,0.004671406000852585
+occupation,XGBoost,Optimal,cat__OCCUPATION_Exec-managerial,0.008188205771148205
+occupation,XGBoost,Optimal,cat__OCCUPATION_Farming-fishing,0.013124380260705948
+occupation,XGBoost,Optimal,cat__OCCUPATION_Handlers-cleaners,0.01217123307287693
+occupation,XGBoost,Optimal,cat__OCCUPATION_Machine-op-inspct,0.008118070662021637
+occupation,XGBoost,Optimal,cat__OCCUPATION_Other-service,0.014352850615978241
+occupation,XGBoost,Optimal,cat__OCCUPATION_Priv-house-serv,0.004783662501722574
+occupation,XGBoost,Optimal,cat__OCCUPATION_Prof-specialty,0.006849369965493679
+occupation,XGBoost,Optimal,cat__OCCUPATION_Protective-serv,0.008619964122772217
+occupation,XGBoost,Optimal,cat__OCCUPATION_Sales,0.008650582283735275
+occupation,XGBoost,Optimal,cat__OCCUPATION_Tech-support,0.0059244055300951
+occupation,XGBoost,Optimal,cat__OCCUPATION_Transport-moving,0.004302621353417635
+occupation,XGBoost,Optimal,cat__RACE_Amer-Indian-Eskimo,0.0
+occupation,XGBoost,Optimal,cat__RACE_Asian-Pac-Islander,0.004727456718683243
+occupation,XGBoost,Optimal,cat__RACE_Black,0.0058647142723202705
+occupation,XGBoost,Optimal,cat__RACE_Other,0.0
+occupation,XGBoost,Optimal,cat__RACE_White,0.006531366612762213
+occupation,XGBoost,Optimal,cat__GENDER_Female,0.007572768721729517
+occupation,XGBoost,Optimal,cat__GENDER_Male,0.0
+occupation,XGBoost,Optimal,num__AGE,0.007394683081656694
+occupation,XGBoost,Optimal,num__EDUCATION_YEARS,0.0559372715651989
+occupation,XGBoost,Optimal,num__CAPITAL_GAIN,0.050071947276592255
+occupation,XGBoost,Optimal,num__CAPITAL_LOSS,0.008931264281272888
+occupation,XGBoost,Optimal,num__HOURS_PER_WEEK,0.01060413010418415
+occupation,XGBoost,Underfit,cat__EDUCATION_10th,0.0
+occupation,XGBoost,Underfit,cat__EDUCATION_11th,0.002278899075463414
+occupation,XGBoost,Underfit,cat__EDUCATION_12th,0.0
+occupation,XGBoost,Underfit,cat__EDUCATION_1st-4th,0.0
+occupation,XGBoost,Underfit,cat__EDUCATION_5th-6th,0.0
+occupation,XGBoost,Underfit,cat__EDUCATION_7th-8th,0.0
+occupation,XGBoost,Underfit,cat__EDUCATION_9th,0.0
+occupation,XGBoost,Underfit,cat__EDUCATION_Assoc-acdm,0.001819502329453826
+occupation,XGBoost,Underfit,cat__EDUCATION_Assoc-voc,0.0
+occupation,XGBoost,Underfit,cat__EDUCATION_Bachelors,0.004656187258660793
+occupation,XGBoost,Underfit,cat__EDUCATION_Doctorate,0.0
+occupation,XGBoost,Underfit,cat__EDUCATION_HS-grad,0.025134693831205368
+occupation,XGBoost,Underfit,cat__EDUCATION_Masters,0.0
+occupation,XGBoost,Underfit,cat__EDUCATION_Preschool,0.0
+occupation,XGBoost,Underfit,cat__EDUCATION_Prof-school,0.0
+occupation,XGBoost,Underfit,cat__EDUCATION_Some-college,0.0
+occupation,XGBoost,Underfit,cat__MARITAL_STATUS_Divorced,0.0
+occupation,XGBoost,Underfit,cat__MARITAL_STATUS_Married-AF-spouse,0.0
+occupation,XGBoost,Underfit,cat__MARITAL_STATUS_Married-civ-spouse,0.6889660954475403
+occupation,XGBoost,Underfit,cat__MARITAL_STATUS_Married-spouse-absent,0.0
+occupation,XGBoost,Underfit,cat__MARITAL_STATUS_Never-married,0.005273545626550913
+occupation,XGBoost,Underfit,cat__MARITAL_STATUS_Separated,0.0
+occupation,XGBoost,Underfit,cat__MARITAL_STATUS_Widowed,0.0
+occupation,XGBoost,Underfit,cat__OCCUPATION_Adm-clerical,0.0
+occupation,XGBoost,Underfit,cat__OCCUPATION_Armed-Forces,0.0
+occupation,XGBoost,Underfit,cat__OCCUPATION_Craft-repair,0.0004935371107421815
+occupation,XGBoost,Underfit,cat__OCCUPATION_Exec-managerial,0.002553796162828803
+occupation,XGBoost,Underfit,cat__OCCUPATION_Farming-fishing,0.0
+occupation,XGBoost,Underfit,cat__OCCUPATION_Handlers-cleaners,0.0
+occupation,XGBoost,Underfit,cat__OCCUPATION_Machine-op-inspct,0.0
+occupation,XGBoost,Underfit,cat__OCCUPATION_Other-service,0.009358329698443413
+occupation,XGBoost,Underfit,cat__OCCUPATION_Priv-house-serv,0.0
+occupation,XGBoost,Underfit,cat__OCCUPATION_Prof-specialty,0.005478872451931238
+occupation,XGBoost,Underfit,cat__OCCUPATION_Protective-serv,0.0024291679728776217
+occupation,XGBoost,Underfit,cat__OCCUPATION_Sales,0.0
+occupation,XGBoost,Underfit,cat__OCCUPATION_Tech-support,0.0
+occupation,XGBoost,Underfit,cat__OCCUPATION_Transport-moving,0.0
+occupation,XGBoost,Underfit,cat__RACE_Amer-Indian-Eskimo,0.0
+occupation,XGBoost,Underfit,cat__RACE_Asian-Pac-Islander,0.0048837908543646336
+occupation,XGBoost,Underfit,cat__RACE_Black,0.0
+occupation,XGBoost,Underfit,cat__RACE_Other,0.0
+occupation,XGBoost,Underfit,cat__RACE_White,0.0
+occupation,XGBoost,Underfit,cat__GENDER_Female,0.004939476028084755
+occupation,XGBoost,Underfit,cat__GENDER_Male,0.0
+occupation,XGBoost,Underfit,num__AGE,0.0090561518445611
+occupation,XGBoost,Underfit,num__EDUCATION_YEARS,0.11599184572696686
+occupation,XGBoost,Underfit,num__CAPITAL_GAIN,0.10317262262105942
+occupation,XGBoost,Underfit,num__CAPITAL_LOSS,0.0025468028616160154
+occupation,XGBoost,Underfit,num__HOURS_PER_WEEK,0.010966735891997814
+occupation,XGBoost,Overfit,cat__EDUCATION_10th,0.009407545439898968
+occupation,XGBoost,Overfit,cat__EDUCATION_11th,0.008075096644461155
+occupation,XGBoost,Overfit,cat__EDUCATION_12th,0.0
+occupation,XGBoost,Overfit,cat__EDUCATION_1st-4th,0.0
+occupation,XGBoost,Overfit,cat__EDUCATION_5th-6th,0.0
+occupation,XGBoost,Overfit,cat__EDUCATION_7th-8th,0.006277789827436209
+occupation,XGBoost,Overfit,cat__EDUCATION_9th,0.0
+occupation,XGBoost,Overfit,cat__EDUCATION_Assoc-acdm,0.02121233195066452
+occupation,XGBoost,Overfit,cat__EDUCATION_Assoc-voc,0.014896593987941742
+occupation,XGBoost,Overfit,cat__EDUCATION_Bachelors,0.009878503158688545
+occupation,XGBoost,Overfit,cat__EDUCATION_Doctorate,0.004161766730248928
+occupation,XGBoost,Overfit,cat__EDUCATION_HS-grad,0.011857885867357254
+occupation,XGBoost,Overfit,cat__EDUCATION_Masters,0.007860179990530014
+occupation,XGBoost,Overfit,cat__EDUCATION_Preschool,0.0
+occupation,XGBoost,Overfit,cat__EDUCATION_Prof-school,0.018948346376419067
+occupation,XGBoost,Overfit,cat__EDUCATION_Some-college,0.007037494331598282
+occupation,XGBoost,Overfit,cat__MARITAL_STATUS_Divorced,0.011249344795942307
+occupation,XGBoost,Overfit,cat__MARITAL_STATUS_Married-AF-spouse,0.0
+occupation,XGBoost,Overfit,cat__MARITAL_STATUS_Married-civ-spouse,0.305678129196167
+occupation,XGBoost,Overfit,cat__MARITAL_STATUS_Married-spouse-absent,0.008586776442825794
+occupation,XGBoost,Overfit,cat__MARITAL_STATUS_Never-married,0.021338967606425285
+occupation,XGBoost,Overfit,cat__MARITAL_STATUS_Separated,0.01580912061035633
+occupation,XGBoost,Overfit,cat__MARITAL_STATUS_Widowed,0.01251589972525835
+occupation,XGBoost,Overfit,cat__OCCUPATION_Adm-clerical,0.012668535113334656
+occupation,XGBoost,Overfit,cat__OCCUPATION_Armed-Forces,0.0
+occupation,XGBoost,Overfit,cat__OCCUPATION_Craft-repair,0.0071843829937279224
+occupation,XGBoost,Overfit,cat__OCCUPATION_Exec-managerial,0.014576959423720837
+occupation,XGBoost,Overfit,cat__OCCUPATION_Farming-fishing,0.015431449748575687
+occupation,XGBoost,Overfit,cat__OCCUPATION_Handlers-cleaners,0.01217019371688366
+occupation,XGBoost,Overfit,cat__OCCUPATION_Machine-op-inspct,0.010154620744287968
+occupation,XGBoost,Overfit,cat__OCCUPATION_Other-service,0.046488553285598755
+occupation,XGBoost,Overfit,cat__OCCUPATION_Priv-house-serv,0.0
+occupation,XGBoost,Overfit,cat__OCCUPATION_Prof-specialty,0.010849460028111935
+occupation,XGBoost,Overfit,cat__OCCUPATION_Protective-serv,0.017767347395420074
+occupation,XGBoost,Overfit,cat__OCCUPATION_Sales,0.0150070209056139
+occupation,XGBoost,Overfit,cat__OCCUPATION_Tech-support,0.016821959987282753
+occupation,XGBoost,Overfit,cat__OCCUPATION_Transport-moving,0.009241053834557533
+occupation,XGBoost,Overfit,cat__RACE_Amer-Indian-Eskimo,0.0026404319796711206
+occupation,XGBoost,Overfit,cat__RACE_Asian-Pac-Islander,0.014161593280732632
+occupation,XGBoost,Overfit,cat__RACE_Black,0.013543300330638885
+occupation,XGBoost,Overfit,cat__RACE_Other,0.0
+occupation,XGBoost,Overfit,cat__RACE_White,0.01480643916875124
+occupation,XGBoost,Overfit,cat__GENDER_Female,0.016466865316033363
+occupation,XGBoost,Overfit,cat__GENDER_Male,0.0
+occupation,XGBoost,Overfit,num__AGE,0.01121743954718113
+occupation,XGBoost,Overfit,num__EDUCATION_YEARS,0.05196787044405937
+occupation,XGBoost,Overfit,num__CAPITAL_GAIN,0.151107057929039
+occupation,XGBoost,Overfit,num__CAPITAL_LOSS,0.025352289900183678
+occupation,XGBoost,Overfit,num__HOURS_PER_WEEK,0.015583452768623829
+occupation,Decision Tree,Optimal,cat__EDUCATION_10th,0.0
+occupation,Decision Tree,Optimal,cat__EDUCATION_11th,0.0
+occupation,Decision Tree,Optimal,cat__EDUCATION_12th,0.0
+occupation,Decision Tree,Optimal,cat__EDUCATION_1st-4th,0.0
+occupation,Decision Tree,Optimal,cat__EDUCATION_5th-6th,0.0
+occupation,Decision Tree,Optimal,cat__EDUCATION_7th-8th,0.0
+occupation,Decision Tree,Optimal,cat__EDUCATION_9th,0.0
+occupation,Decision Tree,Optimal,cat__EDUCATION_Assoc-acdm,0.0002017717350606
+occupation,Decision Tree,Optimal,cat__EDUCATION_Assoc-voc,0.0
+occupation,Decision Tree,Optimal,cat__EDUCATION_Bachelors,0.009118451670909404
+occupation,Decision Tree,Optimal,cat__EDUCATION_Doctorate,0.0
+occupation,Decision Tree,Optimal,cat__EDUCATION_HS-grad,0.01378305791137065
+occupation,Decision Tree,Optimal,cat__EDUCATION_Masters,0.0
+occupation,Decision Tree,Optimal,cat__EDUCATION_Preschool,0.0
+occupation,Decision Tree,Optimal,cat__EDUCATION_Prof-school,0.0
+occupation,Decision Tree,Optimal,cat__EDUCATION_Some-college,0.0
+occupation,Decision Tree,Optimal,cat__MARITAL_STATUS_Divorced,0.0006057309955688538
+occupation,Decision Tree,Optimal,cat__MARITAL_STATUS_Married-AF-spouse,0.0
+occupation,Decision Tree,Optimal,cat__MARITAL_STATUS_Married-civ-spouse,0.3814311918111269
+occupation,Decision Tree,Optimal,cat__MARITAL_STATUS_Married-spouse-absent,0.0
+occupation,Decision Tree,Optimal,cat__MARITAL_STATUS_Never-married,0.006954087361861223
+occupation,Decision Tree,Optimal,cat__MARITAL_STATUS_Separated,0.0
+occupation,Decision Tree,Optimal,cat__MARITAL_STATUS_Widowed,0.000569904034942259
+occupation,Decision Tree,Optimal,cat__OCCUPATION_Adm-clerical,0.010404486536931545
+occupation,Decision Tree,Optimal,cat__OCCUPATION_Armed-Forces,0.0
+occupation,Decision Tree,Optimal,cat__OCCUPATION_Craft-repair,0.0
+occupation,Decision Tree,Optimal,cat__OCCUPATION_Exec-managerial,0.020038977270663526
+occupation,Decision Tree,Optimal,cat__OCCUPATION_Farming-fishing,0.0
+occupation,Decision Tree,Optimal,cat__OCCUPATION_Handlers-cleaners,0.0
+occupation,Decision Tree,Optimal,cat__OCCUPATION_Machine-op-inspct,0.0
+occupation,Decision Tree,Optimal,cat__OCCUPATION_Other-service,0.0
+occupation,Decision Tree,Optimal,cat__OCCUPATION_Priv-house-serv,0.0
+occupation,Decision Tree,Optimal,cat__OCCUPATION_Prof-specialty,0.00835714053163517
+occupation,Decision Tree,Optimal,cat__OCCUPATION_Protective-serv,0.0
+occupation,Decision Tree,Optimal,cat__OCCUPATION_Sales,0.00733413642853014
+occupation,Decision Tree,Optimal,cat__OCCUPATION_Tech-support,0.0002474710094348973
+occupation,Decision Tree,Optimal,cat__OCCUPATION_Transport-moving,0.00042273647374962444
+occupation,Decision Tree,Optimal,cat__RACE_Amer-Indian-Eskimo,0.0
+occupation,Decision Tree,Optimal,cat__RACE_Asian-Pac-Islander,0.0
+occupation,Decision Tree,Optimal,cat__RACE_Black,0.0
+occupation,Decision Tree,Optimal,cat__RACE_Other,0.0
+occupation,Decision Tree,Optimal,cat__RACE_White,0.000785943412613315
+occupation,Decision Tree,Optimal,cat__GENDER_Female,0.004170686578686842
+occupation,Decision Tree,Optimal,cat__GENDER_Male,0.003891883376050853
+occupation,Decision Tree,Optimal,num__AGE,0.07387154628625879
+occupation,Decision Tree,Optimal,num__EDUCATION_YEARS,0.2342732763304
+occupation,Decision Tree,Optimal,num__CAPITAL_GAIN,0.15868427548451142
+occupation,Decision Tree,Optimal,num__CAPITAL_LOSS,0.0
+occupation,Decision Tree,Optimal,num__HOURS_PER_WEEK,0.06485324475969409
+occupation,Decision Tree,Underfit,cat__EDUCATION_10th,0.0
+occupation,Decision Tree,Underfit,cat__EDUCATION_11th,0.0
+occupation,Decision Tree,Underfit,cat__EDUCATION_12th,0.0
+occupation,Decision Tree,Underfit,cat__EDUCATION_1st-4th,0.0
+occupation,Decision Tree,Underfit,cat__EDUCATION_5th-6th,0.0
+occupation,Decision Tree,Underfit,cat__EDUCATION_7th-8th,0.0
+occupation,Decision Tree,Underfit,cat__EDUCATION_9th,0.0
+occupation,Decision Tree,Underfit,cat__EDUCATION_Assoc-acdm,0.0
+occupation,Decision Tree,Underfit,cat__EDUCATION_Assoc-voc,0.0
+occupation,Decision Tree,Underfit,cat__EDUCATION_Bachelors,0.0
+occupation,Decision Tree,Underfit,cat__EDUCATION_Doctorate,0.0
+occupation,Decision Tree,Underfit,cat__EDUCATION_HS-grad,0.0
+occupation,Decision Tree,Underfit,cat__EDUCATION_Masters,0.0
+occupation,Decision Tree,Underfit,cat__EDUCATION_Preschool,0.0
+occupation,Decision Tree,Underfit,cat__EDUCATION_Prof-school,0.0
+occupation,Decision Tree,Underfit,cat__EDUCATION_Some-college,0.0
+occupation,Decision Tree,Underfit,cat__MARITAL_STATUS_Divorced,0.0
+occupation,Decision Tree,Underfit,cat__MARITAL_STATUS_Married-AF-spouse,0.0
+occupation,Decision Tree,Underfit,cat__MARITAL_STATUS_Married-civ-spouse,0.4788660961034223
+occupation,Decision Tree,Underfit,cat__MARITAL_STATUS_Married-spouse-absent,0.0
+occupation,Decision Tree,Underfit,cat__MARITAL_STATUS_Never-married,0.0
+occupation,Decision Tree,Underfit,cat__MARITAL_STATUS_Separated,0.0
+occupation,Decision Tree,Underfit,cat__MARITAL_STATUS_Widowed,0.0
+occupation,Decision Tree,Underfit,cat__OCCUPATION_Adm-clerical,0.0
+occupation,Decision Tree,Underfit,cat__OCCUPATION_Armed-Forces,0.0
+occupation,Decision Tree,Underfit,cat__OCCUPATION_Craft-repair,0.0
+occupation,Decision Tree,Underfit,cat__OCCUPATION_Exec-managerial,0.0
+occupation,Decision Tree,Underfit,cat__OCCUPATION_Farming-fishing,0.0
+occupation,Decision Tree,Underfit,cat__OCCUPATION_Handlers-cleaners,0.0
+occupation,Decision Tree,Underfit,cat__OCCUPATION_Machine-op-inspct,0.0
+occupation,Decision Tree,Underfit,cat__OCCUPATION_Other-service,0.0
+occupation,Decision Tree,Underfit,cat__OCCUPATION_Priv-house-serv,0.0
+occupation,Decision Tree,Underfit,cat__OCCUPATION_Prof-specialty,0.0
+occupation,Decision Tree,Underfit,cat__OCCUPATION_Protective-serv,0.0
+occupation,Decision Tree,Underfit,cat__OCCUPATION_Sales,0.0
+occupation,Decision Tree,Underfit,cat__OCCUPATION_Tech-support,0.0
+occupation,Decision Tree,Underfit,cat__OCCUPATION_Transport-moving,0.0
+occupation,Decision Tree,Underfit,cat__RACE_Amer-Indian-Eskimo,0.0
+occupation,Decision Tree,Underfit,cat__RACE_Asian-Pac-Islander,0.0
+occupation,Decision Tree,Underfit,cat__RACE_Black,0.0
+occupation,Decision Tree,Underfit,cat__RACE_Other,0.0
+occupation,Decision Tree,Underfit,cat__RACE_White,0.0
+occupation,Decision Tree,Underfit,cat__GENDER_Female,0.0
+occupation,Decision Tree,Underfit,cat__GENDER_Male,0.0
+occupation,Decision Tree,Underfit,num__AGE,0.015235642644713627
+occupation,Decision Tree,Underfit,num__EDUCATION_YEARS,0.2886627673968856
+occupation,Decision Tree,Underfit,num__CAPITAL_GAIN,0.19812688390901248
+occupation,Decision Tree,Underfit,num__CAPITAL_LOSS,0.0
+occupation,Decision Tree,Underfit,num__HOURS_PER_WEEK,0.019108609945965888
+occupation,Decision Tree,Overfit,cat__EDUCATION_10th,0.0
+occupation,Decision Tree,Overfit,cat__EDUCATION_11th,0.0013824540841923013
+occupation,Decision Tree,Overfit,cat__EDUCATION_12th,0.0
+occupation,Decision Tree,Overfit,cat__EDUCATION_1st-4th,0.0
+occupation,Decision Tree,Overfit,cat__EDUCATION_5th-6th,0.0
+occupation,Decision Tree,Overfit,cat__EDUCATION_7th-8th,0.00029624016089835185
+occupation,Decision Tree,Overfit,cat__EDUCATION_9th,0.0
+occupation,Decision Tree,Overfit,cat__EDUCATION_Assoc-acdm,0.00015500719665451968
+occupation,Decision Tree,Overfit,cat__EDUCATION_Assoc-voc,0.0026615933055120513
+occupation,Decision Tree,Overfit,cat__EDUCATION_Bachelors,0.0070041733259309045
+occupation,Decision Tree,Overfit,cat__EDUCATION_Doctorate,0.00030848148986109173
+occupation,Decision Tree,Overfit,cat__EDUCATION_HS-grad,0.011413596029914444
+occupation,Decision Tree,Overfit,cat__EDUCATION_Masters,0.0037629862308420844
+occupation,Decision Tree,Overfit,cat__EDUCATION_Preschool,0.0
+occupation,Decision Tree,Overfit,cat__EDUCATION_Prof-school,0.0
+occupation,Decision Tree,Overfit,cat__EDUCATION_Some-college,0.0008275138378813407
+occupation,Decision Tree,Overfit,cat__MARITAL_STATUS_Divorced,0.006119090924100183
+occupation,Decision Tree,Overfit,cat__MARITAL_STATUS_Married-AF-spouse,0.0
+occupation,Decision Tree,Overfit,cat__MARITAL_STATUS_Married-civ-spouse,0.2929894543264146
+occupation,Decision Tree,Overfit,cat__MARITAL_STATUS_Married-spouse-absent,0.0
+occupation,Decision Tree,Overfit,cat__MARITAL_STATUS_Never-married,0.007888120355247313
+occupation,Decision Tree,Overfit,cat__MARITAL_STATUS_Separated,0.0
+occupation,Decision Tree,Overfit,cat__MARITAL_STATUS_Widowed,0.000543932051221671
+occupation,Decision Tree,Overfit,cat__OCCUPATION_Adm-clerical,0.01122228001664732
+occupation,Decision Tree,Overfit,cat__OCCUPATION_Armed-Forces,0.0
+occupation,Decision Tree,Overfit,cat__OCCUPATION_Craft-repair,0.006158725921055538
+occupation,Decision Tree,Overfit,cat__OCCUPATION_Exec-managerial,0.021977295528050115
+occupation,Decision Tree,Overfit,cat__OCCUPATION_Farming-fishing,0.004602115511300095
+occupation,Decision Tree,Overfit,cat__OCCUPATION_Handlers-cleaners,0.0022364808491929238
+occupation,Decision Tree,Overfit,cat__OCCUPATION_Machine-op-inspct,0.003332291732928884
+occupation,Decision Tree,Overfit,cat__OCCUPATION_Other-service,0.0034702520782557977
+occupation,Decision Tree,Overfit,cat__OCCUPATION_Priv-house-serv,0.0
+occupation,Decision Tree,Overfit,cat__OCCUPATION_Prof-specialty,0.012069288855997366
+occupation,Decision Tree,Overfit,cat__OCCUPATION_Protective-serv,0.005982631356785737
+occupation,Decision Tree,Overfit,cat__OCCUPATION_Sales,0.022309846679414373
+occupation,Decision Tree,Overfit,cat__OCCUPATION_Tech-support,0.0002044187452762212
+occupation,Decision Tree,Overfit,cat__OCCUPATION_Transport-moving,0.00046622058496946414
+occupation,Decision Tree,Overfit,cat__RACE_Amer-Indian-Eskimo,0.00043775745076295386
+occupation,Decision Tree,Overfit,cat__RACE_Asian-Pac-Islander,0.0015882286764544189
+occupation,Decision Tree,Overfit,cat__RACE_Black,0.0007822490976912371
+occupation,Decision Tree,Overfit,cat__RACE_Other,0.0
+occupation,Decision Tree,Overfit,cat__RACE_White,0.004387750624641807
+occupation,Decision Tree,Overfit,cat__GENDER_Female,0.007321834028694564
+occupation,Decision Tree,Overfit,cat__GENDER_Male,0.0036875052628415643
+occupation,Decision Tree,Overfit,num__AGE,0.14406584230034206
+occupation,Decision Tree,Overfit,num__EDUCATION_YEARS,0.1863573498724962
+occupation,Decision Tree,Overfit,num__CAPITAL_GAIN,0.12402192842328591
+occupation,Decision Tree,Overfit,num__CAPITAL_LOSS,0.004477706875239345
+occupation,Decision Tree,Overfit,num__HOURS_PER_WEEK,0.09348735620900522
+occupation,Random Forest,Optimal,cat__EDUCATION_10th,0.0026097050059070747
+occupation,Random Forest,Optimal,cat__EDUCATION_11th,0.002354245965813168
+occupation,Random Forest,Optimal,cat__EDUCATION_12th,0.0006203047318798526
+occupation,Random Forest,Optimal,cat__EDUCATION_1st-4th,0.0001450209048559995
+occupation,Random Forest,Optimal,cat__EDUCATION_5th-6th,0.0008882094098653081
+occupation,Random Forest,Optimal,cat__EDUCATION_7th-8th,0.001525252589685121
+occupation,Random Forest,Optimal,cat__EDUCATION_9th,0.0015426871317197313
+occupation,Random Forest,Optimal,cat__EDUCATION_Assoc-acdm,0.0035316786639882306
+occupation,Random Forest,Optimal,cat__EDUCATION_Assoc-voc,0.0049001251962391
+occupation,Random Forest,Optimal,cat__EDUCATION_Bachelors,0.01991462245764646
+occupation,Random Forest,Optimal,cat__EDUCATION_Doctorate,0.005957147613550413
+occupation,Random Forest,Optimal,cat__EDUCATION_HS-grad,0.0115915402839834
+occupation,Random Forest,Optimal,cat__EDUCATION_Masters,0.014024280886274249
+occupation,Random Forest,Optimal,cat__EDUCATION_Preschool,9.638997543970209e-06
+occupation,Random Forest,Optimal,cat__EDUCATION_Prof-school,0.008840472903348506
+occupation,Random Forest,Optimal,cat__EDUCATION_Some-college,0.0074720085581771924
+occupation,Random Forest,Optimal,cat__MARITAL_STATUS_Divorced,0.014137390562055204
+occupation,Random Forest,Optimal,cat__MARITAL_STATUS_Married-AF-spouse,0.0014274333875377667
+occupation,Random Forest,Optimal,cat__MARITAL_STATUS_Married-civ-spouse,0.12991304843757995
+occupation,Random Forest,Optimal,cat__MARITAL_STATUS_Married-spouse-absent,0.0017135461293282773
+occupation,Random Forest,Optimal,cat__MARITAL_STATUS_Never-married,0.06125820113976356
+occupation,Random Forest,Optimal,cat__MARITAL_STATUS_Separated,0.003488200625842912
+occupation,Random Forest,Optimal,cat__MARITAL_STATUS_Widowed,0.0035041280086205062
+occupation,Random Forest,Optimal,cat__OCCUPATION_Adm-clerical,0.010006310776034411
+occupation,Random Forest,Optimal,cat__OCCUPATION_Armed-Forces,5.374588973557741e-06
+occupation,Random Forest,Optimal,cat__OCCUPATION_Craft-repair,0.00633213053029431
+occupation,Random Forest,Optimal,cat__OCCUPATION_Exec-managerial,0.03200503125840812
+occupation,Random Forest,Optimal,cat__OCCUPATION_Farming-fishing,0.006549831313809362
+occupation,Random Forest,Optimal,cat__OCCUPATION_Handlers-cleaners,0.003563150677088729
+occupation,Random Forest,Optimal,cat__OCCUPATION_Machine-op-inspct,0.004714694515661547
+occupation,Random Forest,Optimal,cat__OCCUPATION_Other-service,0.011981319678457218
+occupation,Random Forest,Optimal,cat__OCCUPATION_Priv-house-serv,0.0012163527763207423
+occupation,Random Forest,Optimal,cat__OCCUPATION_Prof-specialty,0.020641481590427672
+occupation,Random Forest,Optimal,cat__OCCUPATION_Protective-serv,0.004400494360710517
+occupation,Random Forest,Optimal,cat__OCCUPATION_Sales,0.010223840039402163
+occupation,Random Forest,Optimal,cat__OCCUPATION_Tech-support,0.004871685147800225
+occupation,Random Forest,Optimal,cat__OCCUPATION_Transport-moving,0.004586579356743752
+occupation,Random Forest,Optimal,cat__RACE_Amer-Indian-Eskimo,0.001991141977198845
+occupation,Random Forest,Optimal,cat__RACE_Asian-Pac-Islander,0.00688345810315984
+occupation,Random Forest,Optimal,cat__RACE_Black,0.007361151144173503
+occupation,Random Forest,Optimal,cat__RACE_Other,0.0007626948642603603
+occupation,Random Forest,Optimal,cat__RACE_White,0.00928814526372588
+occupation,Random Forest,Optimal,cat__GENDER_Female,0.02147526239280791
+occupation,Random Forest,Optimal,cat__GENDER_Male,0.021193838450924832
+occupation,Random Forest,Optimal,num__AGE,0.1742777838239738
+occupation,Random Forest,Optimal,num__EDUCATION_YEARS,0.10717003515742411
+occupation,Random Forest,Optimal,num__CAPITAL_GAIN,0.10126160277675612
+occupation,Random Forest,Optimal,num__CAPITAL_LOSS,0.017110119546823885
+occupation,Random Forest,Optimal,num__HOURS_PER_WEEK,0.10875760029743263
+occupation,Random Forest,Underfit,cat__EDUCATION_10th,0.002667137247554839
+occupation,Random Forest,Underfit,cat__EDUCATION_11th,0.00034124888838251013
+occupation,Random Forest,Underfit,cat__EDUCATION_12th,0.0003414423963190293
+occupation,Random Forest,Underfit,cat__EDUCATION_1st-4th,0.00014275033129338438
+occupation,Random Forest,Underfit,cat__EDUCATION_5th-6th,0.0010285213629223863
+occupation,Random Forest,Underfit,cat__EDUCATION_7th-8th,0.0001237628547550653
+occupation,Random Forest,Underfit,cat__EDUCATION_9th,0.00025911728777926006
+occupation,Random Forest,Underfit,cat__EDUCATION_Assoc-acdm,0.0012382256799606305
+occupation,Random Forest,Underfit,cat__EDUCATION_Assoc-voc,0.002175166044383113
+occupation,Random Forest,Underfit,cat__EDUCATION_Bachelors,0.018558197329780198
+occupation,Random Forest,Underfit,cat__EDUCATION_Doctorate,0.01247043138515795
+occupation,Random Forest,Underfit,cat__EDUCATION_HS-grad,0.017901946512393803
+occupation,Random Forest,Underfit,cat__EDUCATION_Masters,0.01682526126481245
+occupation,Random Forest,Underfit,cat__EDUCATION_Preschool,0.0
+occupation,Random Forest,Underfit,cat__EDUCATION_Prof-school,0.01625569893461714
+occupation,Random Forest,Underfit,cat__EDUCATION_Some-college,0.0025514840807479003
+occupation,Random Forest,Underfit,cat__MARITAL_STATUS_Divorced,0.03152707798588217
+occupation,Random Forest,Underfit,cat__MARITAL_STATUS_Married-AF-spouse,0.0012413959485239857
+occupation,Random Forest,Underfit,cat__MARITAL_STATUS_Married-civ-spouse,0.15280556046598248
+occupation,Random Forest,Underfit,cat__MARITAL_STATUS_Married-spouse-absent,0.00038901027272420354
+occupation,Random Forest,Underfit,cat__MARITAL_STATUS_Never-married,0.08390559831980135
+occupation,Random Forest,Underfit,cat__MARITAL_STATUS_Separated,0.001066424369864389
+occupation,Random Forest,Underfit,cat__MARITAL_STATUS_Widowed,0.001529202433048029
+occupation,Random Forest,Underfit,cat__OCCUPATION_Adm-clerical,0.004626339820106721
+occupation,Random Forest,Underfit,cat__OCCUPATION_Armed-Forces,0.0
+occupation,Random Forest,Underfit,cat__OCCUPATION_Craft-repair,0.002482953266758267
+occupation,Random Forest,Underfit,cat__OCCUPATION_Exec-managerial,0.04888194798615167
+occupation,Random Forest,Underfit,cat__OCCUPATION_Farming-fishing,0.003251152850010688
+occupation,Random Forest,Underfit,cat__OCCUPATION_Handlers-cleaners,0.0021903088724737796
+occupation,Random Forest,Underfit,cat__OCCUPATION_Machine-op-inspct,0.0020011606832989765
+occupation,Random Forest,Underfit,cat__OCCUPATION_Other-service,0.010648032197371305
+occupation,Random Forest,Underfit,cat__OCCUPATION_Priv-house-serv,0.0003379070213213667
+occupation,Random Forest,Underfit,cat__OCCUPATION_Prof-specialty,0.03551715945815419
+occupation,Random Forest,Underfit,cat__OCCUPATION_Protective-serv,0.001099977594092137
+occupation,Random Forest,Underfit,cat__OCCUPATION_Sales,0.00304074853492292
+occupation,Random Forest,Underfit,cat__OCCUPATION_Tech-support,0.0016386777932869082
+occupation,Random Forest,Underfit,cat__OCCUPATION_Transport-moving,0.0007134524944025486
+occupation,Random Forest,Underfit,cat__RACE_Amer-Indian-Eskimo,0.0007556457146292322
+occupation,Random Forest,Underfit,cat__RACE_Asian-Pac-Islander,0.002844235605594388
+occupation,Random Forest,Underfit,cat__RACE_Black,0.005102920451229282
+occupation,Random Forest,Underfit,cat__RACE_Other,0.0005104042574420552
+occupation,Random Forest,Underfit,cat__RACE_White,0.004275239045415728
+occupation,Random Forest,Underfit,cat__GENDER_Female,0.02643655718998612
+occupation,Random Forest,Underfit,cat__GENDER_Male,0.03585970299568743
+occupation,Random Forest,Underfit,num__AGE,0.11126674032449872
+occupation,Random Forest,Underfit,num__EDUCATION_YEARS,0.1146655561382961
+occupation,Random Forest,Underfit,num__CAPITAL_GAIN,0.1387696017385184
+occupation,Random Forest,Underfit,num__CAPITAL_LOSS,0.010460136202433978
+occupation,Random Forest,Underfit,num__HOURS_PER_WEEK,0.06727878036723081
+occupation,Random Forest,Overfit,cat__EDUCATION_10th,0.0024785122800706954
+occupation,Random Forest,Overfit,cat__EDUCATION_11th,0.0021301992352330077
+occupation,Random Forest,Overfit,cat__EDUCATION_12th,0.0006535220841815684
+occupation,Random Forest,Overfit,cat__EDUCATION_1st-4th,0.00021776486803515128
+occupation,Random Forest,Overfit,cat__EDUCATION_5th-6th,0.0007522646260618627
+occupation,Random Forest,Overfit,cat__EDUCATION_7th-8th,0.0016600646579048735
+occupation,Random Forest,Overfit,cat__EDUCATION_9th,0.0015583536402904174
+occupation,Random Forest,Overfit,cat__EDUCATION_Assoc-acdm,0.00372932233074205
+occupation,Random Forest,Overfit,cat__EDUCATION_Assoc-voc,0.004892246545716526
+occupation,Random Forest,Overfit,cat__EDUCATION_Bachelors,0.01903918470879207
+occupation,Random Forest,Overfit,cat__EDUCATION_Doctorate,0.0059933174690157175
+occupation,Random Forest,Overfit,cat__EDUCATION_HS-grad,0.01263243005116463
+occupation,Random Forest,Overfit,cat__EDUCATION_Masters,0.012088370455411368
+occupation,Random Forest,Overfit,cat__EDUCATION_Preschool,1.2915123624979175e-05
+occupation,Random Forest,Overfit,cat__EDUCATION_Prof-school,0.009991185936361313
+occupation,Random Forest,Overfit,cat__EDUCATION_Some-college,0.007468745207653895
+occupation,Random Forest,Overfit,cat__MARITAL_STATUS_Divorced,0.013587587291728657
+occupation,Random Forest,Overfit,cat__MARITAL_STATUS_Married-AF-spouse,0.0014388197958263356
+occupation,Random Forest,Overfit,cat__MARITAL_STATUS_Married-civ-spouse,0.1318444295858445
+occupation,Random Forest,Overfit,cat__MARITAL_STATUS_Married-spouse-absent,0.001633963309548219
+occupation,Random Forest,Overfit,cat__MARITAL_STATUS_Never-married,0.060628381679522676
+occupation,Random Forest,Overfit,cat__MARITAL_STATUS_Separated,0.003358083613906773
+occupation,Random Forest,Overfit,cat__MARITAL_STATUS_Widowed,0.003462276321052556
+occupation,Random Forest,Overfit,cat__OCCUPATION_Adm-clerical,0.009892687707443615
+occupation,Random Forest,Overfit,cat__OCCUPATION_Armed-Forces,7.4602363240505274e-06
+occupation,Random Forest,Overfit,cat__OCCUPATION_Craft-repair,0.006444069699244956
+occupation,Random Forest,Overfit,cat__OCCUPATION_Exec-managerial,0.03165580773108039
+occupation,Random Forest,Overfit,cat__OCCUPATION_Farming-fishing,0.006567234514472152
+occupation,Random Forest,Overfit,cat__OCCUPATION_Handlers-cleaners,0.0037468882546974696
+occupation,Random Forest,Overfit,cat__OCCUPATION_Machine-op-inspct,0.004670204095752461
+occupation,Random Forest,Overfit,cat__OCCUPATION_Other-service,0.012585144723790987
+occupation,Random Forest,Overfit,cat__OCCUPATION_Priv-house-serv,0.0011042397342269947
+occupation,Random Forest,Overfit,cat__OCCUPATION_Prof-specialty,0.02094593156635109
+occupation,Random Forest,Overfit,cat__OCCUPATION_Protective-serv,0.004431376037762861
+occupation,Random Forest,Overfit,cat__OCCUPATION_Sales,0.010651117377089143
+occupation,Random Forest,Overfit,cat__OCCUPATION_Tech-support,0.005009302132509097
+occupation,Random Forest,Overfit,cat__OCCUPATION_Transport-moving,0.004318570720281357
+occupation,Random Forest,Overfit,cat__RACE_Amer-Indian-Eskimo,0.0020529486238125352
+occupation,Random Forest,Overfit,cat__RACE_Asian-Pac-Islander,0.006688707373137563
+occupation,Random Forest,Overfit,cat__RACE_Black,0.007215531217668881
+occupation,Random Forest,Overfit,cat__RACE_Other,0.0007638692101177978
+occupation,Random Forest,Overfit,cat__RACE_White,0.009484715289488011
+occupation,Random Forest,Overfit,cat__GENDER_Female,0.022037718688278817
+occupation,Random Forest,Overfit,cat__GENDER_Male,0.02129358462550166
+occupation,Random Forest,Overfit,num__AGE,0.17012223583391958
+occupation,Random Forest,Overfit,num__EDUCATION_YEARS,0.10619994659073224
+occupation,Random Forest,Overfit,num__CAPITAL_GAIN,0.10563810219342104
+occupation,Random Forest,Overfit,num__CAPITAL_LOSS,0.016980942011228854
+occupation,Random Forest,Overfit,num__HOURS_PER_WEEK,0.10823972299397651
+stackoverflow,XGBoost,Optimal,cat__AGE_<35,0.0
+stackoverflow,XGBoost,Optimal,cat__AGE_>35,0.0
+stackoverflow,XGBoost,Optimal,cat__ACCESSIBILITY_No,0.0
+stackoverflow,XGBoost,Optimal,cat__ACCESSIBILITY_Yes,0.0
+stackoverflow,XGBoost,Optimal,cat__EDUCATION_LEVEL_Master,0.0
+stackoverflow,XGBoost,Optimal,cat__EDUCATION_LEVEL_NoHigherEd,0.0
+stackoverflow,XGBoost,Optimal,cat__EDUCATION_LEVEL_Other,0.0
+stackoverflow,XGBoost,Optimal,cat__EDUCATION_LEVEL_PhD,0.01962195336818695
+stackoverflow,XGBoost,Optimal,cat__EDUCATION_LEVEL_Undergraduate,0.012177602387964725
+stackoverflow,XGBoost,Optimal,cat__GENDER_Man,0.05607665330171585
+stackoverflow,XGBoost,Optimal,cat__GENDER_NonBinary,0.0
+stackoverflow,XGBoost,Optimal,cat__GENDER_Woman,0.0
+stackoverflow,XGBoost,Optimal,num__EMPLOYMENT,0.027124468237161636
+stackoverflow,XGBoost,Optimal,num__YEARS_CODE,0.0
+stackoverflow,XGBoost,Optimal,num__YEARS_CODE_PRO,0.03687738999724388
+stackoverflow,XGBoost,Optimal,num__COMPUTER_SKILLS,0.8481220006942749
+stackoverflow,XGBoost,Optimal,num__MENTAL_HEALTH,0.0
+stackoverflow,XGBoost,Underfit,cat__AGE_<35,0.0
+stackoverflow,XGBoost,Underfit,cat__AGE_>35,0.0
+stackoverflow,XGBoost,Underfit,cat__ACCESSIBILITY_No,0.0
+stackoverflow,XGBoost,Underfit,cat__ACCESSIBILITY_Yes,0.0
+stackoverflow,XGBoost,Underfit,cat__EDUCATION_LEVEL_Master,0.0
+stackoverflow,XGBoost,Underfit,cat__EDUCATION_LEVEL_NoHigherEd,0.0
+stackoverflow,XGBoost,Underfit,cat__EDUCATION_LEVEL_Other,0.0
+stackoverflow,XGBoost,Underfit,cat__EDUCATION_LEVEL_PhD,0.0
+stackoverflow,XGBoost,Underfit,cat__EDUCATION_LEVEL_Undergraduate,0.0
+stackoverflow,XGBoost,Underfit,cat__GENDER_Man,0.0
+stackoverflow,XGBoost,Underfit,cat__GENDER_NonBinary,0.0
+stackoverflow,XGBoost,Underfit,cat__GENDER_Woman,0.0
+stackoverflow,XGBoost,Underfit,num__EMPLOYMENT,0.0
+stackoverflow,XGBoost,Underfit,num__YEARS_CODE,0.0
+stackoverflow,XGBoost,Underfit,num__YEARS_CODE_PRO,0.0
+stackoverflow,XGBoost,Underfit,num__COMPUTER_SKILLS,1.0
+stackoverflow,XGBoost,Underfit,num__MENTAL_HEALTH,0.0
+stackoverflow,XGBoost,Overfit,cat__AGE_<35,0.04295402020215988
+stackoverflow,XGBoost,Overfit,cat__AGE_>35,0.0
+stackoverflow,XGBoost,Overfit,cat__ACCESSIBILITY_No,0.025500599294900894
+stackoverflow,XGBoost,Overfit,cat__ACCESSIBILITY_Yes,0.0
+stackoverflow,XGBoost,Overfit,cat__EDUCATION_LEVEL_Master,0.05038611963391304
+stackoverflow,XGBoost,Overfit,cat__EDUCATION_LEVEL_NoHigherEd,0.030208421871066093
+stackoverflow,XGBoost,Overfit,cat__EDUCATION_LEVEL_Other,0.059323374181985855
+stackoverflow,XGBoost,Overfit,cat__EDUCATION_LEVEL_PhD,0.046259645372629166
+stackoverflow,XGBoost,Overfit,cat__EDUCATION_LEVEL_Undergraduate,0.02756582200527191
+stackoverflow,XGBoost,Overfit,cat__GENDER_Man,0.04184863716363907
+stackoverflow,XGBoost,Overfit,cat__GENDER_NonBinary,0.03985423222184181
+stackoverflow,XGBoost,Overfit,cat__GENDER_Woman,0.05169445276260376
+stackoverflow,XGBoost,Overfit,num__EMPLOYMENT,0.04916219413280487
+stackoverflow,XGBoost,Overfit,num__YEARS_CODE,0.03734399378299713
+stackoverflow,XGBoost,Overfit,num__YEARS_CODE_PRO,0.03999808430671692
+stackoverflow,XGBoost,Overfit,num__COMPUTER_SKILLS,0.4216153919696808
+stackoverflow,XGBoost,Overfit,num__MENTAL_HEALTH,0.03628510609269142
+stackoverflow,Decision Tree,Optimal,cat__AGE_<35,0.0
+stackoverflow,Decision Tree,Optimal,cat__AGE_>35,0.0
+stackoverflow,Decision Tree,Optimal,cat__ACCESSIBILITY_No,0.0
+stackoverflow,Decision Tree,Optimal,cat__ACCESSIBILITY_Yes,0.0
+stackoverflow,Decision Tree,Optimal,cat__EDUCATION_LEVEL_Master,0.0
+stackoverflow,Decision Tree,Optimal,cat__EDUCATION_LEVEL_NoHigherEd,0.0
+stackoverflow,Decision Tree,Optimal,cat__EDUCATION_LEVEL_Other,0.0
+stackoverflow,Decision Tree,Optimal,cat__EDUCATION_LEVEL_PhD,0.0
+stackoverflow,Decision Tree,Optimal,cat__EDUCATION_LEVEL_Undergraduate,0.0
+stackoverflow,Decision Tree,Optimal,cat__GENDER_Man,0.0
+stackoverflow,Decision Tree,Optimal,cat__GENDER_NonBinary,0.0
+stackoverflow,Decision Tree,Optimal,cat__GENDER_Woman,0.0
+stackoverflow,Decision Tree,Optimal,num__EMPLOYMENT,0.0
+stackoverflow,Decision Tree,Optimal,num__YEARS_CODE,0.0
+stackoverflow,Decision Tree,Optimal,num__YEARS_CODE_PRO,0.0
+stackoverflow,Decision Tree,Optimal,num__COMPUTER_SKILLS,1.0
+stackoverflow,Decision Tree,Optimal,num__MENTAL_HEALTH,0.0
+stackoverflow,Decision Tree,Underfit,cat__AGE_<35,0.0
+stackoverflow,Decision Tree,Underfit,cat__AGE_>35,0.0
+stackoverflow,Decision Tree,Underfit,cat__ACCESSIBILITY_No,0.0
+stackoverflow,Decision Tree,Underfit,cat__ACCESSIBILITY_Yes,0.0
+stackoverflow,Decision Tree,Underfit,cat__EDUCATION_LEVEL_Master,0.0
+stackoverflow,Decision Tree,Underfit,cat__EDUCATION_LEVEL_NoHigherEd,0.0
+stackoverflow,Decision Tree,Underfit,cat__EDUCATION_LEVEL_Other,0.0
+stackoverflow,Decision Tree,Underfit,cat__EDUCATION_LEVEL_PhD,0.0
+stackoverflow,Decision Tree,Underfit,cat__EDUCATION_LEVEL_Undergraduate,0.0
+stackoverflow,Decision Tree,Underfit,cat__GENDER_Man,0.0
+stackoverflow,Decision Tree,Underfit,cat__GENDER_NonBinary,0.0
+stackoverflow,Decision Tree,Underfit,cat__GENDER_Woman,0.0
+stackoverflow,Decision Tree,Underfit,num__EMPLOYMENT,0.0
+stackoverflow,Decision Tree,Underfit,num__YEARS_CODE,0.0
+stackoverflow,Decision Tree,Underfit,num__YEARS_CODE_PRO,0.0
+stackoverflow,Decision Tree,Underfit,num__COMPUTER_SKILLS,1.0
+stackoverflow,Decision Tree,Underfit,num__MENTAL_HEALTH,0.0
+stackoverflow,Decision Tree,Overfit,cat__AGE_<35,0.0
+stackoverflow,Decision Tree,Overfit,cat__AGE_>35,0.0
+stackoverflow,Decision Tree,Overfit,cat__ACCESSIBILITY_No,0.0
+stackoverflow,Decision Tree,Overfit,cat__ACCESSIBILITY_Yes,0.0
+stackoverflow,Decision Tree,Overfit,cat__EDUCATION_LEVEL_Master,0.0
+stackoverflow,Decision Tree,Overfit,cat__EDUCATION_LEVEL_NoHigherEd,0.0
+stackoverflow,Decision Tree,Overfit,cat__EDUCATION_LEVEL_Other,0.0
+stackoverflow,Decision Tree,Overfit,cat__EDUCATION_LEVEL_PhD,0.0
+stackoverflow,Decision Tree,Overfit,cat__EDUCATION_LEVEL_Undergraduate,0.0
+stackoverflow,Decision Tree,Overfit,cat__GENDER_Man,0.0
+stackoverflow,Decision Tree,Overfit,cat__GENDER_NonBinary,0.0
+stackoverflow,Decision Tree,Overfit,cat__GENDER_Woman,0.0
+stackoverflow,Decision Tree,Overfit,num__EMPLOYMENT,0.0
+stackoverflow,Decision Tree,Overfit,num__YEARS_CODE,0.0
+stackoverflow,Decision Tree,Overfit,num__YEARS_CODE_PRO,0.0
+stackoverflow,Decision Tree,Overfit,num__COMPUTER_SKILLS,1.0
+stackoverflow,Decision Tree,Overfit,num__MENTAL_HEALTH,0.0
+stackoverflow,Random Forest,Optimal,cat__AGE_<35,0.0042309610689375745
+stackoverflow,Random Forest,Optimal,cat__AGE_>35,0.005879038074389852
+stackoverflow,Random Forest,Optimal,cat__ACCESSIBILITY_No,0.0033719193049650607
+stackoverflow,Random Forest,Optimal,cat__ACCESSIBILITY_Yes,0.004400769506818464
+stackoverflow,Random Forest,Optimal,cat__EDUCATION_LEVEL_Master,0.009760435126063538
+stackoverflow,Random Forest,Optimal,cat__EDUCATION_LEVEL_NoHigherEd,0.0031978036358112135
+stackoverflow,Random Forest,Optimal,cat__EDUCATION_LEVEL_Other,0.008168612909671602
+stackoverflow,Random Forest,Optimal,cat__EDUCATION_LEVEL_PhD,0.029125257057807136
+stackoverflow,Random Forest,Optimal,cat__EDUCATION_LEVEL_Undergraduate,0.008059001315598703
+stackoverflow,Random Forest,Optimal,cat__GENDER_Man,0.002684221600433997
+stackoverflow,Random Forest,Optimal,cat__GENDER_NonBinary,0.0060573242935048404
+stackoverflow,Random Forest,Optimal,cat__GENDER_Woman,0.006297702801086947
+stackoverflow,Random Forest,Optimal,num__EMPLOYMENT,0.004080800175661674
+stackoverflow,Random Forest,Optimal,num__YEARS_CODE,0.06666005662469508
+stackoverflow,Random Forest,Optimal,num__YEARS_CODE_PRO,0.04201537539260306
+stackoverflow,Random Forest,Optimal,num__COMPUTER_SKILLS,0.7910344746296984
+stackoverflow,Random Forest,Optimal,num__MENTAL_HEALTH,0.0049762464822528385
+stackoverflow,Random Forest,Underfit,cat__AGE_<35,0.0024239976631592235
+stackoverflow,Random Forest,Underfit,cat__AGE_>35,0.01596550640720538
+stackoverflow,Random Forest,Underfit,cat__ACCESSIBILITY_No,0.0007561320406841741
+stackoverflow,Random Forest,Underfit,cat__ACCESSIBILITY_Yes,0.006479426436335829
+stackoverflow,Random Forest,Underfit,cat__EDUCATION_LEVEL_Master,0.009918403551240046
+stackoverflow,Random Forest,Underfit,cat__EDUCATION_LEVEL_NoHigherEd,0.013319405880469615
+stackoverflow,Random Forest,Underfit,cat__EDUCATION_LEVEL_Other,0.04623674449338621
+stackoverflow,Random Forest,Underfit,cat__EDUCATION_LEVEL_PhD,0.09184004042269267
+stackoverflow,Random Forest,Underfit,cat__EDUCATION_LEVEL_Undergraduate,0.03317593544668233
+stackoverflow,Random Forest,Underfit,cat__GENDER_Man,0.003347131413979742
+stackoverflow,Random Forest,Underfit,cat__GENDER_NonBinary,0.019255786188680762
+stackoverflow,Random Forest,Underfit,cat__GENDER_Woman,0.03418799554768635
+stackoverflow,Random Forest,Underfit,num__EMPLOYMENT,0.0032835716555170125
+stackoverflow,Random Forest,Underfit,num__YEARS_CODE,0.15365619558092408
+stackoverflow,Random Forest,Underfit,num__YEARS_CODE_PRO,0.07624708768414751
+stackoverflow,Random Forest,Underfit,num__COMPUTER_SKILLS,0.4700201996790831
+stackoverflow,Random Forest,Underfit,num__MENTAL_HEALTH,0.019886439908125778
+stackoverflow,Random Forest,Overfit,cat__AGE_<35,0.004435681259151561
+stackoverflow,Random Forest,Overfit,cat__AGE_>35,0.0041599980971466005
+stackoverflow,Random Forest,Overfit,cat__ACCESSIBILITY_No,0.003722404491105765
+stackoverflow,Random Forest,Overfit,cat__ACCESSIBILITY_Yes,0.0035710026226516344
+stackoverflow,Random Forest,Overfit,cat__EDUCATION_LEVEL_Master,0.006419670891034346
+stackoverflow,Random Forest,Overfit,cat__EDUCATION_LEVEL_NoHigherEd,0.003136331083690557
+stackoverflow,Random Forest,Overfit,cat__EDUCATION_LEVEL_Other,0.005373385631532501
+stackoverflow,Random Forest,Overfit,cat__EDUCATION_LEVEL_PhD,0.00793605670239076
+stackoverflow,Random Forest,Overfit,cat__EDUCATION_LEVEL_Undergraduate,0.00486175522270264
+stackoverflow,Random Forest,Overfit,cat__GENDER_Man,0.005106826720820632
+stackoverflow,Random Forest,Overfit,cat__GENDER_NonBinary,0.0038707895472231855
+stackoverflow,Random Forest,Overfit,cat__GENDER_Woman,0.004421880410394838
+stackoverflow,Random Forest,Overfit,num__EMPLOYMENT,0.007173573558423188
+stackoverflow,Random Forest,Overfit,num__YEARS_CODE,0.050942275872380795
+stackoverflow,Random Forest,Overfit,num__YEARS_CODE_PRO,0.0469167332056765
+stackoverflow,Random Forest,Overfit,num__COMPUTER_SKILLS,0.8298749868729566
+stackoverflow,Random Forest,Overfit,num__MENTAL_HEALTH,0.00807664781071791

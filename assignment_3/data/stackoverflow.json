@@ -1,0 +1,20 @@
+{
+  "stackoverflow": {
+    "filename": "stackoverflow.csv",
+    "target": "EMPLOYED",
+    "categorical_features": [
+      "AGE",
+      "ACCESSIBILITY",
+      "EDUCATION_LEVEL",
+      "GENDER"
+    ],
+    "numerical_features": [
+      "EMPLOYMENT",
+      "YEARS_CODE",
+      "YEARS_CODE_PRO",
+      "COMPUTER_SKILLS",
+      "MENTAL_HEALTH"
+    ],
+    "description": "Developer Survey Data (Employment Status)"
+  }
+}

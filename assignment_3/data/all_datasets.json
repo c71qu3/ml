@@ -1,0 +1,70 @@
+{
+  "insurance": {
+    "filename": "insurance.csv",
+    "target": "LABEL",
+    "categorical_features": [
+      "SEX",
+      "SMOKER",
+      "REGION",
+      "BMI_CATEGORY",
+      "HAS_CHILDREN"
+    ],
+    "numerical_features": [
+      "AGE"
+    ],
+    "description": "Healthcare Insurance Charges Prediction (Original POC Dataset)"
+  },
+  "personality": {
+    "filename": "personality.csv",
+    "target": "PERSONALITY",
+    "categorical_features": [
+      "STAGE_FEAR",
+      "SOCIAL_DRAIN",
+      "TIME_ALONE",
+      "EVENT_ATTENDANCE"
+    ],
+    "numerical_features": [
+      "GOING_OUTSIDE",
+      "FRIEND_CIRCLE",
+      "POST_FREQUENCY"
+    ],
+    "description": "Personality Classification (Introvert/Extrovert)"
+  },
+  "occupation": {
+    "filename": "occupation.csv",
+    "target": "INCOME",
+    "categorical_features": [
+      "EDUCATION",
+      "MARITAL_STATUS",
+      "OCCUPATION",
+      "RACE",
+      "GENDER"
+    ],
+    "numerical_features": [
+      "AGE",
+      "EDUCATION_YEARS",
+      "CAPITAL_GAIN",
+      "CAPITAL_LOSS",
+      "HOURS_PER_WEEK"
+    ],
+    "description": "Income Prediction (<=50K / >50K) - Adult Census Data"
+  },
+  "stackoverflow": {
+    "filename": "stackoverflow.csv",
+    "target": "EMPLOYED",
+    "categorical_features": [
+      "AGE",
+      "ACCESSIBILITY",
+      "EDUCATION_LEVEL",
+      "GENDER"
+    ],
+    "numerical_features": [
+      "EMPLOYMENT",
+      "YEARS_CODE",
+      "YEARS_CODE_PRO",
+      "COMPUTER_SKILLS",
+      "MENTAL_HEALTH"
+    ],
+    "description": "Developer Survey Data (Employment Status)"
+  }
+}

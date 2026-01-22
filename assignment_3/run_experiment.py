@@ -25,8 +25,7 @@ DATA_DIRECTORY = os.path.join('.', 'data')
 MODEL_CLASS = {
     'XGBoost': XGBClassifier,
     'Decision Tree': DecisionTreeClassifier,
-    'Random Forest': RandomForestClassifier,
-    'Multi-Layer Perceptron': MLPClassifier}
+    'Random Forest': RandomForestClassifier}
 
 
 def run_experiment(
@@ -51,8 +50,14 @@ def main(
     ) -> Dict[str, pd.DataFrame]:
     """"""
     # Iterate over each dataset
-    all_results = {}
     all_parameters = []
+    attack_results = pd.DataFrame({
+        'dataset': [], 'feature': [], 'model': [],
+        'variant': [], 'split': [], 'random': [],
+        'majority': [], 'accuracy': [], 'duration': []})
+    tree_importances = pd.DataFrame({
+        'dataset': [], 'model': [], 'variant': [],
+        'feature': [], 'importance': []})
     for dataset in data_config:
 
         # Load dataset
@@ -93,8 +98,22 @@ def main(
                 row['dataset'] = dataset
             all_parameters += parameters
 
+        # Save decision tree feature importance
+        for m in trained_variants:
+            for v, p in trained_variants[m].items():
+                model = p.named_steps['model']
+                features = p.named_steps['preprocessor'].get_feature_names_out()
+                importances = model.feature_importances_
+                new_rows = pd.DataFrame({
+                    "dataset": [dataset] * len(features),
+                    "model": [m] * len(features),
+                    "variant": [v] * len(features),
+                    "feature": features,
+                    "importance": importances})
+                tree_importances = pd.concat([tree_importances, new_rows], ignore_index=True)
+
         # Iterate over each categorical feature
-        attack_results = []
+        results_rows = []
         for feature in categorical:
             feature_values = df[feature].unique()
             feature_baseline = baselines[feature]
@@ -108,35 +127,69 @@ def main(
                         accuracy, duration = run_experiment(
                             model_variant, X,
                             feature, feature_values)
-                        attack_results.append({
-                            'Dataset': dataset,
-                            'Feature': feature,
-                            'Model': model_name,
-                            'Variant': variant_name,
-                            'Split': split,
-                            'Random': baselines[feature]['random'],
-                            'Majority': baselines[feature]['majority'],
-                            'Accuracy': accuracy,
-                            'Duration': duration})
+                        results_rows.append({
+                            'dataset': dataset,
+                            'feature': feature,
+                            'model': model_name,
+                            'variant': variant_name,
+                            'split': split,
+                            'random': baselines[feature]['random'],
+                            'majority': baselines[feature]['majority'],
+                            'accuracy': accuracy,
+                            'duration': duration})
 
-        all_results[dataset] = pd.DataFrame(attack_results)
-    return all_results, all_parameters
+        attack_results = pd.concat(
+            [attack_results, pd.DataFrame(results_rows)],
+            ignore_index=True)
+    return attack_results, all_parameters, tree_importances
 
 
 if __name__ == "__main__":
+
+    model_config = {
+        "XGBoost": {
+            "base_params": {
+            "eval_metric": "logloss"
+            },
+            "grid_search_params": {
+            "model__n_estimators": [4, 8, 12, 16, 24, 32, 64, 128, 256],
+            "model__learning_rate": [0.001, 0.01, 0.1, 0.2, 0.4, 0.8],
+            "model__max_depth": [1, 2, 3, 4, 6, 8, 12, 16]
+            }
+        },
+        "Decision Tree": {
+            "base_params": {},
+            "grid_search_params": {
+            "model__max_depth": [1, 2, 3, 4, 6, 8, 12, 16],
+            "model__min_samples_split": [2, 4, 6, 8, 10, 12, 14],
+            "model__min_samples_leaf": [1, 2, 4, 6, 8, 12, 16, 22]
+            }
+        },
+        "Random Forest": {
+            "base_params": {
+            "n_jobs": 1
+            },
+            "grid_search_params": {
+            "model__n_estimators": [10, 20, 30, 60, 90, 120, 160, 200, 240, 280, 320],
+            "model__min_samples_split": [2, 4, 6, 8, 10, 12, 14],
+            "model__max_depth": [1, 2, 3, 4, 6, 8, 12, 16]
+            }
+        }
+    }
 
     description = "Run ML attribute inference experiment."
     parser = argparse.ArgumentParser(description=description)
 
     parser.add_argument(
         '-d', '--data-config',
-        type=str, required=True,
-        help="Filepath to data_config JSON file.")
+        type=str, required=False,
+        default=os.path.join(DATA_DIRECTORY, "all_datasets.json"),
+        help="Filepath to JSON file settings for experiment datasets.")
 
-    parser.add_argument(
-        '-m', '--model-config',
-        type=str, required=True,
-        help="Filepath to model_config JSON file.")
+    # parser.add_argument(
+    #     '-m', '--model-config',
+    #     type=str, required=True,
+    #     help="Filepath to model_config JSON file.")
 
     parser.add_argument(
         '--data-dir',
@@ -155,20 +208,29 @@ if __name__ == "__main__":
     with open(args.data_config, 'r') as file:
         data_config = json.load(file)
 
-    with open(args.model_config, 'r') as file:
-        model_config = json.load(file)
+    # with open(args.model_config, 'r') as file:
+    #     model_config = json.load(file)
 
-    results, parameters = main(
+    results, parameters, importances = main(
         data_config=data_config,
         model_config=model_config,
         data_directory=args.data_dir,
         random_state=args.random_state)
 
     timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
-    for dataset, df in results.items():
-        filename = f"{timestamp}_{dataset}_attack_results.csv"
-        df.to_csv(filename, index=False)
+
+    filename = f"{timestamp}_attack_results.csv"
+    results.to_csv(
+        os.path.join(DATA_DIRECTORY, "output", filename),
+        index=False)
 
     parameters = pd.DataFrame(parameters)
     filename = f"{timestamp}_experiment_parameters.csv"
-    parameters.to_csv(filename, index=False)
+    parameters.to_csv(
+        os.path.join(DATA_DIRECTORY, "output", filename),
+        index=False)
+
+    filename = f"{timestamp}_feature_importance.csv"
+    importances.to_csv(
+        os.path.join(DATA_DIRECTORY, "output", filename),
+        index=False)
