@@ -48,7 +48,7 @@ def main(
         data_directory: str=DATA_DIRECTORY,
         random_state: int=RANDOM_STATE
     ) -> Dict[str, pd.DataFrame]:
-    """"""
+    """Run experiment with the given parameters."""
     # Iterate over each dataset
     all_parameters = []
     attack_results = pd.DataFrame({
@@ -186,10 +186,10 @@ if __name__ == "__main__":
         default=os.path.join(DATA_DIRECTORY, "all_datasets.json"),
         help="Filepath to JSON file settings for experiment datasets.")
 
-    # parser.add_argument(
-    #     '-m', '--model-config',
-    #     type=str, required=True,
-    #     help="Filepath to model_config JSON file.")
+    parser.add_argument(
+        '-i', '--with-images',
+        type=bool, required=False,
+        help="Flag to generate report images.")
 
     parser.add_argument(
         '--data-dir',
@@ -208,8 +208,6 @@ if __name__ == "__main__":
     with open(args.data_config, 'r') as file:
         data_config = json.load(file)
 
-    # with open(args.model_config, 'r') as file:
-    #     model_config = json.load(file)
 
     results, parameters, importances = main(
         data_config=data_config,
@@ -217,6 +215,8 @@ if __name__ == "__main__":
         data_directory=args.data_dir,
         random_state=args.random_state)
 
+
+    os.makedirs(os.path.join(DATA_DIRECTORY, "output"), exist_ok=True)
     timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
 
     filename = f"{timestamp}_attack_results.csv"
@@ -234,3 +234,9 @@ if __name__ == "__main__":
     importances.to_csv(
         os.path.join(DATA_DIRECTORY, "output", filename),
         index=False)
+
+
+    if args.with_images:
+
+        from process_results import correlation_attack_importance
+        correlation_attack_importance(timestamp)

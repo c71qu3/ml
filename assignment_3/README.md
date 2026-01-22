@@ -13,6 +13,8 @@ This project explores attribute inference attacks by conducting experiments on d
 ├── README.md
 ├── setup.sh
 │
+├── images/
+│
 ├── data/
 │   ├── output/
 │   │
@@ -35,20 +37,22 @@ This project explores attribute inference attacks by conducting experiments on d
 ├── helper_functions.py
 ├── attribute_inference.py
 ├── attribute_inference_parallel.py
+├── process_results.py
 │
 └── requirements.txt
 ```
 
-The `./setup.sh` bash script prepares the experiment to run.
-The `./data/output/` directory will store all the experiment results after it runs.
-The JSON files in the `./data/` directory define the target variable, separate categorical versus numerical features, and describe the dataset.
-The CSV files in the `./data/` directory contain the various datasets.
-The `./notebooks/` directory contain the proof of concept for the experiment and the preprocessing done to the datasets.
-The `./run_experiment.py` script executes the experiment and generates figures from the results.
-The `./helper_functions.py` script contains various methods to assist the experiment.
-The `./attribute_inference.py` and `./attribute_inference_parallel.py` contains the method to execute the inference attack.
-The `./process_results.py` script contains the methods to generate figures from the experiment results.
-The `./requirements.txt` lists the required modules to execute the experiment.
+- The `./setup.sh` bash script prepares the experiment to run.
+- The `./images/` directory will store all figures generated from the experiment.
+- The `./data/output/` directory will store all the experiment results after it runs.
+- The JSON files in the `./data/` directory define the target variable, separate categorical versus numerical features, and describe the dataset.
+- The CSV files in the `./data/` directory contain the various datasets.
+- The `./notebooks/` directory contain the proof of concept for the experiment and the preprocessing done to the datasets.
+- The `./run_experiment.py` script executes the experiment and generates figures from the results.
+- The `./helper_functions.py` script contains various methods to assist the experiment.
+- The `./attribute_inference.py` and `./attribute_inference_parallel.py` contains the method to execute the inference attack.
+- The `./process_results.py` script contains the methods to generate figures from the experiment results.
+- The `./requirements.txt` lists the required modules to execute the experiment.
 
 ### Project Setup
 
@@ -66,7 +70,7 @@ cd /path/to/project
 source setup.sh
 ```
 
-3. To run the experiment with all the available datasets (not recommended) execute the following command from the activated environment.
+3. To run the experiment with all the available datasets execute the following command from the activated environment.
 
 ```{bash}
 python run_experiment.txt
@@ -88,3 +92,34 @@ python run_experiment.txt -d ./data/insurance.json
 ### Experiment Configuration
 
 #### Data Configuration
+
+To run the experiment on a new dataset a JSON configuration file is required:
+
+```{json}
+{
+  "dataset_identifier": {
+    "filename": "dataset_filename.csv",
+    "target": "target_column_name",
+    "categorical_features": [
+      "categorical_column_1_name",
+      "categorical_column_2_name"
+    ],
+    "numerical_features": [
+      "numerical_column_1_name",
+      "numerical_column_2_name"
+    ],
+    "description": "Short description of the dataset"
+  }
+}
+```
+
+- `dataset_identifier` can be any string value used to identify the dataset in the results.
+- `filename` should have the name of a CSV file in the `./data/` directory.
+- `target` should have the column name for the feature the tree-based models will predict.
+- `categorical_features` should list all the column names of categorical features in the dataset included in the experiment.
+- `numerical_features` should list all numerical columns to be included in the tree-based models.
+- `description` can have a short description of the dataset. It is not necessary.
+
+### Results
+
+After running the experiment, results data can be found in the `./data/output/` directory. When running the experiment with the `-i` or `--images`, report images can be found in the `./images/` directory.
